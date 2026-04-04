@@ -3,4 +3,4 @@ Allow: /
 Disallow: /impressum.html
 Disallow: /privacy.html
 
-Sitemap: https://www.helenaflinn.com/sitemap.xml
+Sitemap: https://helenaflinn.com/sitemap.xml

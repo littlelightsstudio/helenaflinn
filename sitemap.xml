@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.helenaflinn.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.helenaflinn.com/impressum.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://www.helenaflinn.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://helenaflinn.com/</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://helenaflinn.com/impressum.html</loc><lastmod>2025-10-01</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://helenaflinn.com/privacy.html</loc><lastmod>2025-10-01</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>
