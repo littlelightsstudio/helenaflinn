@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Design — Vinaborg Dream Engineering Bureau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void: #08060f;
+  --deep: #110d1f;
+  --mid: #1c1430;
+  --surface: #251b3d;
+  --lift: #2f2450;
+  --teal: #2dd4bf;
+  --teal-bright: #5eead4;
+  --teal-dim: #0f766e;
+  --green: #86efac;
+  --purple-light: #c084fc;
+  --gold: #d4a847;
+  --cream: #f5f0e8;
+  --warm: #e8e0d0;
+  --stone: #d4cfc4;
+  --muted-text: #7c7591;
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Crimson Pro', serif;
+  --font-label: 'Josefin Sans', sans-serif;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--void);
+  color: var(--cream);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg-layer {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 20%, rgba(45,212,191,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 15% 80%, rgba(192,132,252,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 60% at 85% 60%, rgba(134,239,172,0.04) 0%, transparent 50%);
+}
+
+.wrap {
+  position: relative; z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+/* ── HEADER ── */
+.bureau-header { text-align: center; margin-bottom: 3.5rem; }
+.bureau-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.6rem; font-weight: 300; letter-spacing: 0.45em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 1rem;
+}
+.bureau-eyebrow::before, .bureau-eyebrow::after { content: '——'; margin: 0 0.8rem; opacity: 0.35; }
+.bureau-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 400; letter-spacing: 0.06em;
+  color: var(--cream); line-height: 1.2; margin-bottom: 0.6rem;
+}
+.bureau-title span {
+  background: linear-gradient(135deg, var(--teal-bright) 0%, var(--green) 50%, var(--teal) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.bureau-sub {
+  font-size: 1.05rem; font-weight: 300; font-style: italic; color: var(--stone);
+  max-width: 520px; margin: 0 auto; line-height: 1.7;
+}
+.divider {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--teal-dim), transparent);
+  margin: 2rem auto;
+}
+
+/* ── STEP INDICATOR ── */
+.step-nav {
+  display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 3rem;
+}
+.step-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1px solid rgba(45,212,191,0.25); background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.05em;
+  color: var(--muted-text); transition: all var(--transition); position: relative; z-index: 1;
+}
+.step-dot.active { border-color: var(--teal); background: rgba(45,212,191,0.1); color: var(--teal-bright); }
+.step-dot.done { border-color: var(--teal-dim); background: rgba(45,212,191,0.06); color: var(--teal); }
+.step-line { width: 48px; height: 1px; background: rgba(45,212,191,0.15); }
+.step-label {
+  font-family: var(--font-label); font-size: 0.5rem; letter-spacing: 0.15em;
+  text-transform: uppercase; text-align: center; margin-top: 0.4rem; color: var(--muted-text);
+}
+.step-wrap { display: flex; flex-direction: column; align-items: center; }
+.step-wrap.active .step-label { color: var(--teal); }
+
+/* ── SECTIONS ── */
+.step-section { display: none; animation: fadeUp 0.4s ease both; }
+.step-section.visible { display: block; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+.section-title {
+  font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal); opacity: 0.7; margin-bottom: 0.35rem;
+}
+.section-lead {
+  font-size: 1.1rem; font-style: italic; color: var(--stone); line-height: 1.65; margin-bottom: 2rem;
+}
+
+/* ── ESSENCE CARDS ── */
+.essence-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem; margin-bottom: 2rem;
+}
+.essence-card {
+  background: var(--surface); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 1.25rem; cursor: pointer;
+  transition: all var(--transition); position: relative; overflow: hidden; user-select: none;
+}
+.essence-card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.12); }
+.essence-card.selected {
+  border-color: var(--card-color, var(--teal));
+  box-shadow: 0 0 24px var(--card-glow, rgba(45,212,191,0.2)), inset 0 0 20px var(--card-glow, rgba(45,212,191,0.05));
+  transform: translateY(-3px);
+}
+.card-check {
+  position: absolute; top: 10px; right: 10px;
+  width: 18px; height: 18px; border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 8px; color: transparent; transition: all var(--transition);
+}
+.essence-card.selected .card-check {
+  background: var(--card-color, var(--teal));
+  border-color: var(--card-color, var(--teal));
+  color: var(--void);
+}
+.card-vial { width: 28px; height: 42px; margin-bottom: 0.85rem; }
+.card-vial svg { width: 100%; height: 100%; }
+.card-name {
+  font-family: var(--font-display); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--cream); margin-bottom: 0.2rem; line-height: 1.3;
+}
+.card-function {
+  font-family: var(--font-label); font-size: 0.45rem; font-weight: 300;
+  letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.65rem;
+}
+.card-effect { font-size: 0.8rem; color: var(--stone); line-height: 1.55; margin-bottom: 0.75rem; }
+.card-quote {
+  font-size: 0.7rem; font-style: italic; color: var(--muted-text); line-height: 1.5;
+  border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.6rem;
+}
+
+.selection-counter {
+  font-family: var(--font-label); font-size: 0.55rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted-text); text-align: center;
+  margin-bottom: 1.5rem; transition: color var(--transition);
+}
+.selection-counter.ready { color: var(--teal); }
+
+/* ── STEP 2: CHIP SELECTORS ── */
+.field-group { margin-bottom: 2.5rem; }
+
+.field-label {
+  font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.18em;
+  text-transform: uppercase; margin-bottom: 0.3rem; display: block;
+}
+.field-hint {
+  font-size: 0.88rem; font-style: italic; color: var(--muted-text);
+  margin-bottom: 1rem; line-height: 1.5;
+}
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+
+.chip {
+  font-family: var(--font-body); font-size: 0.88rem; font-style: italic;
+  padding: 0.5rem 1.1rem; border-radius: 30px;
+  border: 1px solid var(--chip-border, rgba(45,212,191,0.2));
+  background: var(--chip-bg, rgba(45,212,191,0.04));
+  color: var(--stone); cursor: pointer;
+  transition: all var(--transition); user-select: none;
+}
+.chip:hover {
+  border-color: var(--chip-color, var(--teal));
+  color: var(--cream);
+  background: var(--chip-hover-bg, rgba(45,212,191,0.08));
+  transform: translateY(-1px);
+}
+.chip.selected {
+  border-color: var(--chip-color, var(--teal));
+  background: var(--chip-selected-bg, rgba(45,212,191,0.12));
+  color: var(--chip-text, var(--teal-bright));
+  box-shadow: 0 0 14px var(--chip-glow, rgba(45,212,191,0.18));
+  transform: translateY(-1px);
+}
+.chip-custom {
+  font-family: var(--font-label); font-size: 0.5rem; font-weight: 300;
+  letter-spacing: 0.15em; text-transform: uppercase; font-style: normal;
+  padding: 0.5rem 1rem;
+  border-style: dashed;
+  color: var(--muted-text);
+}
+.chip-custom:hover { color: var(--cream); }
+.chip-custom.selected {
+  color: var(--chip-color, var(--teal));
+  background: transparent;
+  box-shadow: none;
+}
+
+.custom-input-wrap {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+  opacity: 0;
+}
+.custom-input-wrap.open { max-height: 120px; opacity: 1; }
+
+.dream-input {
+  width: 100%; background: var(--surface);
+  border: 1px solid rgba(45,212,191,0.18); border-radius: 8px;
+  padding: 0.7rem 1rem; font-family: var(--font-body); font-size: 0.95rem;
+  color: var(--cream); outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.dream-input::placeholder { color: var(--muted-text); font-style: italic; }
+.dream-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(45,212,191,0.08); }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.2em;
+  text-transform: uppercase; padding: 0.8rem 2.2rem; border-radius: 6px;
+  border: 1px solid var(--teal-dim); background: rgba(45,212,191,0.08);
+  color: var(--teal-bright); cursor: pointer; transition: all var(--transition);
+}
+.btn-primary:hover {
+  background: rgba(45,212,191,0.15); border-color: var(--teal);
+  box-shadow: 0 0 20px rgba(45,212,191,0.15);
+}
+.btn-primary:disabled { opacity: 0.3; pointer-events: none; }
+.btn-secondary {
+  font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 0.6rem 1.6rem; border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1); background: transparent;
+  color: var(--stone); cursor: pointer; transition: all var(--transition);
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.2); color: var(--cream); }
+.btn-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+
+/* ── BRIEF OUTPUT ── */
+.brief {
+  background: var(--deep); border: 1px solid rgba(45,212,191,0.18);
+  border-radius: 14px; overflow: hidden; margin-top: 1rem;
+}
+.brief-stamp {
+  background: rgba(45,212,191,0.06); border-bottom: 1px solid rgba(45,212,191,0.15);
+  padding: 1.2rem 1.6rem; display: flex; align-items: flex-start;
+  justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;
+}
+.stamp-title {
+  font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--teal); opacity: 0.7; line-height: 1.8;
+}
+.stamp-meta {
+  font-family: var(--font-label); font-size: 0.48rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted-text); text-align: right; line-height: 2;
+}
+.brief-body { padding: 1.6rem; }
+.brief-section { margin-bottom: 1.75rem; }
+.brief-section-title {
+  font-family: var(--font-display); font-size: 0.5rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--teal); opacity: 0.55; margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem; border-bottom: 1px solid rgba(45,212,191,0.1);
+}
+.brief-text { font-size: 0.95rem; color: var(--warm); line-height: 1.72; }
+.brief-text em { color: var(--teal-bright); font-style: italic; }
+.essence-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.essence-tag {
+  font-family: var(--font-label); font-size: 0.45rem; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid;
+}
+.brief-footer {
+  background: rgba(0,0,0,0.2); border-top: 1px solid rgba(45,212,191,0.1);
+  padding: 1rem 1.6rem; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+}
+.footer-reviewer {
+  font-family: var(--font-label); font-size: 0.45rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted-text);
+}
+.footer-approved {
+  font-family: var(--font-display); font-size: 0.5rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal); opacity: 0.6;
+}
+.assessment-box {
+  background: rgba(45,212,191,0.04); border: 1px solid rgba(45,212,191,0.12);
+  border-radius: 8px; padding: 0.9rem 1.1rem;
+  font-size: 0.88rem; font-style: italic; color: var(--stone); line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 2.5rem 1.25rem 4rem; }
+  .essence-grid { grid-template-columns: 1fr 1fr; }
+  .brief-stamp { flex-direction: column; }
+  .stamp-meta { text-align: left; }
+}
+@media (max-width: 400px) {
+  .essence-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-layer"></div>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="bureau-header">
+    <div class="bureau-eyebrow">Vinaborg Dream Engineering Bureau</div>
+    <h1 class="bureau-title">Design Your <span>Dream</span></h1>
+    <p class="bureau-sub">Every dream begins with an intention and a handful of essences. Choose yours, and the Bureau will do the rest.</p>
+    <div class="divider"></div>
+  </header>
+
+  <!-- STEP INDICATOR -->
+  <nav class="step-nav" aria-label="Progress">
+    <div class="step-wrap active" id="wrap-1">
+      <div class="step-dot active" id="dot-1">I</div>
+      <div class="step-label">Essences</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-wrap" id="wrap-2">
+      <div class="step-dot" id="dot-2">II</div>
+      <div class="step-label">Your Dream</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-wrap" id="wrap-3">
+      <div class="step-dot" id="dot-3">III</div>
+      <div class="step-label">Brief</div>
+    </div>
+  </nav>
+
+  <!-- ── STEP 1: CHOOSE ESSENCES ── -->
+  <section class="step-section visible" id="step-1">
+    <div class="section-title">Step One</div>
+    <p class="section-lead">Select two or three essences. These are the active ingredients of your dream — each one shapes the emotional texture of what you will experience.</p>
+    <div class="essence-grid" id="essence-grid"></div>
+    <div class="selection-counter" id="selection-counter">Select 2 or 3 essences to continue</div>
+    <div class="btn-row">
+      <button class="btn-primary" id="btn-to-2" disabled onclick="goTo(2)">Continue to Dream Details →</button>
+    </div>
+  </section>
+
+  <!-- ── STEP 2: YOUR DREAM ── -->
+  <section class="step-section" id="step-2">
+    <div class="section-title">Step Two</div>
+    <p class="section-lead">The essences provide the emotional architecture. Now you provide the materials. Choose one of the suggestions below — or write your own.</p>
+
+    <!-- THE SETTING -->
+    <div class="field-group">
+      <label class="field-label" style="color:var(--teal)">The Setting</label>
+      <div class="field-hint">A place the dream will be anchored in.</div>
+      <div class="chip-row" id="chips-place"
+        style="--chip-color:var(--teal);--chip-border:rgba(45,212,191,0.2);--chip-bg:rgba(45,212,191,0.03);--chip-hover-bg:rgba(45,212,191,0.07);--chip-selected-bg:rgba(45,212,191,0.11);--chip-text:var(--teal-bright);--chip-glow:rgba(45,212,191,0.18)">
+        <div class="chip" data-value="my childhood home" onclick="selectChip(this,'place')">my childhood home</div>
+        <div class="chip" data-value="a place I've never been, but somehow know" onclick="selectChip(this,'place')">a place I've never been, but somehow know</div>
+        <div class="chip" data-value="a school corridor at night" onclick="selectChip(this,'place')">a school corridor at night</div>
+        <div class="chip" data-value="a forest at the edge of a city" onclick="selectChip(this,'place')">a forest at the edge of a city</div>
+        <div class="chip" data-value="a room filled with warm golden light" onclick="selectChip(this,'place')">a room filled with warm golden light</div>
+        <div class="chip" data-value="the house of someone I love" onclick="selectChip(this,'place')">the house of someone I love</div>
+        <div class="chip chip-custom" data-value="custom" onclick="selectChip(this,'place')">✦ write your own</div>
+      </div>
+      <div class="custom-input-wrap" id="custom-wrap-place">
+        <input class="dream-input" id="input-place" type="text" placeholder="e.g. my grandmother's kitchen, a library that doesn't exist yet…" maxlength="120">
+      </div>
+    </div>
+
+    <!-- THE PRESENCE -->
+    <div class="field-group">
+      <label class="field-label" style="color:var(--gold)">The Presence</label>
+      <div class="field-hint">Someone who belongs in this dream. They don't need to be real.</div>
+      <div class="chip-row" id="chips-person"
+        style="--chip-color:var(--gold);--chip-border:rgba(212,168,71,0.2);--chip-bg:rgba(212,168,71,0.03);--chip-hover-bg:rgba(212,168,71,0.07);--chip-selected-bg:rgba(212,168,71,0.1);--chip-text:#e8c060;--chip-glow:rgba(212,168,71,0.18)">
+        <div class="chip" data-value="an old friend I've lost touch with" onclick="selectChip(this,'person')">an old friend I've lost touch with</div>
+        <div class="chip" data-value="a younger version of myself" onclick="selectChip(this,'person')">a younger version of myself</div>
+        <div class="chip" data-value="someone who always made me feel safe" onclick="selectChip(this,'person')">someone who always made me feel safe</div>
+        <div class="chip" data-value="a stranger I somehow recognise" onclick="selectChip(this,'person')">a stranger I somehow recognise</div>
+        <div class="chip" data-value="a person I've been missing" onclick="selectChip(this,'person')">a person I've been missing</div>
+        <div class="chip" data-value="no one in particular — just a presence" onclick="selectChip(this,'person')">no one in particular — just a presence</div>
+        <div class="chip chip-custom" data-value="custom" onclick="selectChip(this,'person')">✦ write your own</div>
+      </div>
+      <div class="custom-input-wrap" id="custom-wrap-person">
+        <input class="dream-input" id="input-person" type="text" placeholder="e.g. my grandmother, a version of myself I haven't met yet…" maxlength="120">
+      </div>
+    </div>
+
+    <!-- THE INTENTION -->
+    <div class="field-group">
+      <label class="field-label" style="color:var(--purple-light)">The Intention</label>
+      <div class="field-hint">Something you'd like to carry with you when you wake.</div>
+      <div class="chip-row" id="chips-feeling"
+        style="--chip-color:var(--purple-light);--chip-border:rgba(192,132,252,0.2);--chip-bg:rgba(192,132,252,0.03);--chip-hover-bg:rgba(192,132,252,0.07);--chip-selected-bg:rgba(192,132,252,0.1);--chip-text:var(--purple-light);--chip-glow:rgba(192,132,252,0.18)">
+        <div class="chip" data-value="the feeling that everything is going to be fine" onclick="selectChip(this,'feeling')">the feeling that everything is going to be fine</div>
+        <div class="chip" data-value="a sense of quiet wonder" onclick="selectChip(this,'feeling')">a sense of quiet wonder</div>
+        <div class="chip" data-value="the warmth of being truly known" onclick="selectChip(this,'feeling')">the warmth of being truly known</div>
+        <div class="chip" data-value="clarity about something unresolved" onclick="selectChip(this,'feeling')">clarity about something unresolved</div>
+        <div class="chip" data-value="the courage to face what I've been avoiding" onclick="selectChip(this,'feeling')">the courage to face what I've been avoiding</div>
+        <div class="chip" data-value="the peace of arriving somewhere I belong" onclick="selectChip(this,'feeling')">the peace of arriving somewhere I belong</div>
+        <div class="chip chip-custom" data-value="custom" onclick="selectChip(this,'feeling')">✦ write your own</div>
+      </div>
+      <div class="custom-input-wrap" id="custom-wrap-feeling">
+        <input class="dream-input" id="input-feeling" type="text" placeholder="e.g. the sense that something difficult is finally behind me…" maxlength="160">
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="goTo(3)">Generate Dream Brief →</button>
+      <button class="btn-secondary" onclick="goTo(1)">← Back</button>
+    </div>
+  </section>
+
+  <!-- ── STEP 3: THE BRIEF ── -->
+  <section class="step-section" id="step-3">
+    <div class="section-title">Your Dream Design Brief</div>
+    <p class="section-lead">Filed with the Bureau. Approved for tonight's distribution.</p>
+    <div class="brief" id="brief-output"></div>
+    <div class="btn-row" style="margin-top:2rem">
+      <button class="btn-primary" onclick="reset()">Design Another Dream</button>
+      <button class="btn-secondary" onclick="goTo(2)">← Edit Details</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// ── ESSENCE DATA ──────────────────────────────────────────────────────────────
+
+const ESSENCES = [
+  {
+    id: 'starblossom',
+    name: 'Starblossom Nectar',
+    function: 'Wonder · Awe · Amazement',
+    visual: 'A sparkling clear liquid with tiny twinkling particles.',
+    effect: 'Adds elements of the extraordinary — the sense of witnessing something that should not be possible and is. One of the oldest essences in continuous production.',
+    quote: '"Starblossom Nectar does not create wonder. It creates permission for it."',
+    quoteSource: 'Wizzbeek Rocketvolt, Field Unit Kids Division',
+    color: '#d4a847', glow: 'rgba(212,168,71,0.25)',
+    v1: '#f5e06a', v2: '#c08020',
+    settingMod: 'The light in <em>{place}</em> will be wrong in a beautiful way — too golden, too soft, coming from somewhere it has no business coming from.',
+    presenceMod: '<em>{person}</em> arrives at the exact moment you stopped expecting them. This is by design.',
+    wakingMod: 'For a few seconds after waking, the ordinary world will look like it is glowing. The nectar works correctly.',
+  },
+  {
+    id: 'lumenroot',
+    name: 'Lumenroot Serum',
+    function: 'Clarity · Insight · Familiarity',
+    visual: 'A bright golden serum with a steady, warm glow.',
+    effect: 'Grounds a dream in the recognizable — familiar environments, everyday scenes the dreamer navigates without friction. The baseline before complexity is added.',
+    quote: '"If a dream has no Lumenroot anywhere in the mix, ask yourself why. You may be designing something interesting. More likely, something that won\'t work."',
+    quoteSource: 'Third-year seminar notes, Vinaborg Academy',
+    color: '#e8a832', glow: 'rgba(232,168,50,0.22)',
+    v1: '#f0c050', v2: '#c08028',
+    settingMod: '<em>{place}</em> will feel exactly as you remember it, but improved. The proportions right. The edges softened. Everything where it should be.',
+    presenceMod: 'Being near <em>{person}</em> carries the quality of being in a room you have always known.',
+    wakingMod: 'You wake with a clear head. Something you have been turning over simply settles. This is common with Lumenroot.',
+  },
+  {
+    id: 'nightbloom',
+    name: 'Nightbloom Serum',
+    function: 'Beauty · Calm · Serenity',
+    visual: 'A translucent liquid with a faint blue-aqua glow.',
+    effect: 'Enhances the aesthetic quality of a dream — tranquil waters, soothing landscapes, the feeling of arriving somewhere safe. Often used to close a difficult template gently.',
+    quote: '"Nightbloom Serum is the closest thing in the laboratory to silence. It does not add — it allows."',
+    quoteSource: 'Keenaacs Bustlespirit, Factory Floor Supervisor',
+    color: '#5ec4d4', glow: 'rgba(94,196,212,0.22)',
+    v1: '#90e0ee', v2: '#2a8898',
+    settingMod: 'The usual roughness of <em>{place}</em> is smoothed away. Whatever this place has been, tonight it is beautiful.',
+    presenceMod: '<em>{person}</em> is quieter than you expect. Somehow this is exactly right.',
+    wakingMod: 'The feeling does not fade as quickly as most dreams do. You carry it into the first hour of the morning.',
+  },
+  {
+    id: 'moonshade',
+    name: 'Moonshade Dust',
+    function: 'Calm · Serenity · Peace',
+    visual: 'Fine silver-luminescent powder. Every dreamsmith learns this one first.',
+    effect: 'The foundational tranquilizer of dream engineering — the baseline against which everything else is measured. Used wherever a dream needs to settle, breathe, or resolve gently.',
+    quote: '"Every apprentice dreamsmith learns Moonshade Dust on their first day. Most reach for it on their last. There is no shame in simplicity when simplicity works."',
+    quoteSource: 'Vinaborg Academy, Introductory Dreamcraft Practicum',
+    color: '#a0b4cc', glow: 'rgba(160,180,204,0.22)',
+    v1: '#dce8f5', v2: '#6880a0',
+    settingMod: '<em>{place}</em> is hushed. The kind of quiet that comes after something difficult has passed, and before anything new has arrived.',
+    presenceMod: '<em>{person}</em> moves through the dream without hurry. Their presence is not demanding anything of you.',
+    wakingMod: 'You wake slowly. The transition between sleep and waking is gentler than usual. This is the dust working correctly.',
+  },
+  {
+    id: 'moonpod',
+    name: 'Moonpod Serum',
+    function: 'Friendly · Welcoming · Warm',
+    visual: 'A glowing soft silver liquid that emits a warm, inviting light.',
+    effect: 'Creates warmth in interactions — the feeling that others are genuinely glad you are there. One of the most used compounds in standard dream templates.',
+    quote: '"Do not mistake warmth for meaning — but do not underestimate warmth either."',
+    quoteSource: 'Dreamcraft Manual, 4th Edition, Chapter 7',
+    color: '#b8cce0', glow: 'rgba(184,204,224,0.2)',
+    v1: '#dce8f5', v2: '#7090b8',
+    settingMod: 'Everyone at <em>{place}</em> already knows your name. They have been waiting, without urgency, for you to arrive.',
+    presenceMod: '<em>{person}</em> is genuinely glad to see you. There is no ambiguity about this.',
+    wakingMod: 'You wake with the residual warmth of having been, briefly, exactly where you were supposed to be.',
+  },
+  {
+    id: 'murmurcap',
+    name: 'Murmurcap Essence',
+    function: 'Revealing · Discovering',
+    visual: 'A faint blue swirling liquid that emits a soft hum. Harvest in silence.',
+    effect: 'Introduces moments of uncovering — hidden knowledge, unexpected truths, the sense of suddenly understanding something you always knew.',
+    quote: '"Murmurcap Essence does not decide what is found. It decides that finding matters."',
+    quoteSource: 'Introductory Dreamcraft Practicum, Year 1, Vinaborg Academy',
+    color: '#8899dd', glow: 'rgba(136,153,221,0.25)',
+    v1: '#aab8f0', v2: '#5566bb',
+    settingMod: 'Something in <em>{place}</em> will shift — a door not there before, a room you hadn\'t noticed, something hidden in plain sight.',
+    presenceMod: '<em>{person}</em> carries something they haven\'t told you yet. The dream will find a moment to reveal it.',
+    wakingMod: 'You wake knowing something you did not know you knew. The source will not be immediately clear. This is normal.',
+  },
+  {
+    id: 'clusterleaf',
+    name: 'Clusterleaf Extract',
+    function: 'Unity · Harmony · Connection',
+    visual: 'A clear green liquid with a faint glow. The roots were interlocked before they were ever separated.',
+    effect: 'Creates a sense that everything within the dream belongs together — people, places, situations all feel part of the same coherent whole.',
+    quote: '"The goblins did not invent interconnectedness. They found a plant that already understood it and made a serum from its roots."',
+    quoteSource: 'Popular saying, Vinaborg Tavern district',
+    color: '#6cc87a', glow: 'rgba(108,200,122,0.22)',
+    v1: '#90e0a0', v2: '#3a8050',
+    settingMod: 'Everything at <em>{place}</em> belongs together tonight. The people, the light, the objects. Nothing is incidental.',
+    presenceMod: '<em>{person}</em> is part of the whole. Their presence makes the space more coherent, not more complicated.',
+    wakingMod: 'You wake with the residual sense that you are not separate from the things that matter to you.',
+  },
+  {
+    id: 'nightlight',
+    name: 'Nightlight Dew',
+    function: 'Familiarity · Safety · Grounding',
+    visual: 'A clear liquid with a soft green glow. Collected from Nightlight Moss in the deepest pre-dawn hours.',
+    effect: 'Makes the dreamer feel safe by recreating the emotional texture of known environments — not specific places, but the feeling of them.',
+    quote: '"Familiarity is not the same as comfort. Nightlight Dew tells the dreamer they know where they are. Whether they like being there is a separate question."',
+    quoteSource: 'Dreamcraft Manual, 4th Edition, Chapter 4',
+    color: '#86efac', glow: 'rgba(134,239,172,0.2)',
+    v1: '#b0e8c8', v2: '#4a9870',
+    settingMod: '<em>{place}</em> does not need to be extraordinary tonight. It simply needs to be known. The dew handles the rest.',
+    presenceMod: '<em>{person}</em> requires no introduction. The dream already knows them.',
+    wakingMod: 'You wake with your feet on the ground. The dew prioritises stability. This is what you asked for.',
+  },
+  {
+    id: 'blowpuff',
+    name: 'Blowpuff Powder',
+    function: 'Confrontation · Resolve',
+    visual: 'Soft green powder from the Blowpuff Shroom. Released by a careful percussion of the cap.',
+    effect: 'Introduces a quality of directness into a dream — the dreamer faces rather than avoids. Used in mastery dreams: here is the difficult thing, and here is the willingness to meet it.',
+    quote: '"Blowpuff Powder does not make a dreamer brave. It makes a dreamer willing to look."',
+    quoteSource: 'Clinical notes, Vienna Institute for Juvenile Sleeping Disorders',
+    color: '#a8c870', glow: 'rgba(168,200,112,0.2)',
+    v1: '#c8e098', v2: '#6a9840',
+    settingMod: 'At <em>{place}</em>, something has been waiting. Not with menace — with patience. Tonight seems like the right time to look at it.',
+    presenceMod: '<em>{person}</em> is there because this is the kind of dream that requires a witness. They will not look away.',
+    wakingMod: 'You wake having stood your ground in the dream. Whether you remember the specifics is secondary. The posture remains.',
+  },
+  {
+    id: 'bellshade',
+    name: 'Bellshade Powder',
+    function: 'Surprise · Unpredictability',
+    visual: 'Dark purple powder from Bellshade flowers, pulsating between hues. Highly moisture-reactive. Use sparingly.',
+    effect: 'Introduces an element of surprise that the dreamer\'s subconscious cannot anticipate. Ensures a dream doesn\'t resolve too neatly — something unexpected before the landing.',
+    quote: '"Too little and a dream feels scripted. Too much and no one — including the dreamer — will see it coming. The second outcome is not a compliment."',
+    quoteSource: 'Annotated margin note, Field Unit Handbook Vol. 3',
+    color: '#c084fc', glow: 'rgba(192,132,252,0.22)',
+    v1: '#d8a8f8', v2: '#8040c8',
+    settingMod: '<em>{place}</em> is mostly as you know it. Something small is different. You will not be sure what, or when it changed.',
+    presenceMod: '<em>{person}</em> does something you did not expect. This is not alarming. It is simply true.',
+    wakingMod: 'Something in the dream will stay with you — a detail, an image, something slightly out of place. The powder designed it that way.',
+  },
+];
+
+const GOBLIN_REVIEWERS = [
+  'Wizzbeek Rocketvolt — Senior Field Engineer, Kids Division',
+  'Keenaacs Bustlespirit — Factory Floor Supervisor, Graveyard Shift',
+  'Jilx Fluxspark — Apprentice Dreamcrafter (Probationary Status)',
+  'Sprogg Nightwhisper — Bureau Quality Control, Eastern Sector',
+  'Thrimble Oozecap — Essence Laboratory, Floor 3',
+  'Nyx Glimmerwick — Dream Distribution, Vienna Route',
+];
+
+const ASSESSMENTS = [
+  'This is a workable template. The essence composition is stable and within acceptable parameters. We have reviewed worse submissions from engineers with significantly more experience.',
+  'Composition approved. The dominant essence does most of the structural work here, as it tends to. The dreamer will likely not notice the machinery. This is ideal.',
+  'A balanced formula. Unlikely to win any awards at the Annual Bureau Excellence Ceremony, but unlikely to cause incidents either. This is, in fact, the goal.',
+  'The combination is unconventional but not unsound. The Bureau has filed stranger things. Approved with the standard notation: dreamer assumes all responsibility for unexpected symbolism.',
+  'Template reviewed. One small concern raised by Floor 3 has been noted and dismissed as excessive caution. The serum ratios are fine. Proceed.',
+];
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+let selected = [];
+let currentStep = 1;
+const fieldSelections = { place: null, person: null, feeling: null };
+
+// ── BUILD ESSENCE GRID ────────────────────────────────────────────────────────
+function vialSVG(e) {
+  return `<svg viewBox="0 0 32 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="12" y="1" width="8" height="7" rx="2" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
+    <path d="M10 8 L6 38 Q6 47 16 47 Q26 47 26 38 L22 8 Z" fill="${e.v2}22" stroke="${e.v1}55" stroke-width="1"/>
+    <ellipse cx="16" cy="37" rx="7" ry="6" fill="${e.v1}44"/>
+    <ellipse cx="16" cy="35" rx="5" ry="3" fill="${e.v1}55"/>
+    <circle cx="13" cy="30" r="1.2" fill="${e.v1}80"/>
+    <circle cx="19" cy="33" r="0.8" fill="${e.v1}70"/>
+    <circle cx="15" cy="27" r="0.6" fill="${e.v1}60"/>
+  </svg>`;
+}
+
+function buildGrid() {
+  const grid = document.getElementById('essence-grid');
+  grid.innerHTML = '';
+  ESSENCES.forEach(e => {
+    const card = document.createElement('div');
+    card.className = 'essence-card';
+    card.id = 'card-' + e.id;
+    card.style.setProperty('--card-color', e.color);
+    card.style.setProperty('--card-glow', e.glow);
+    card.innerHTML = `
+      <div class="card-check">✓</div>
+      <div class="card-vial">${vialSVG(e)}</div>
+      <div class="card-name">${e.name}</div>
+      <div class="card-function" style="color:${e.color}">${e.function}</div>
+      <div class="card-effect">${e.effect}</div>
+      <div class="card-quote">${e.quote}<br><span style="opacity:0.55;font-size:0.65rem">— ${e.quoteSource}</span></div>
+    `;
+    card.onclick = () => toggleEssence(e.id);
+    grid.appendChild(card);
+  });
+}
+
+function toggleEssence(id) {
+  const idx = selected.indexOf(id);
+  if (idx > -1) {
+    selected.splice(idx, 1);
+    document.getElementById('card-' + id).classList.remove('selected');
+  } else {
+    if (selected.length >= 3) return;
+    selected.push(id);
+    document.getElementById('card-' + id).classList.add('selected');
+  }
+  updateCounter();
+}
+
+function updateCounter() {
+  const counter = document.getElementById('selection-counter');
+  const btn = document.getElementById('btn-to-2');
+  const n = selected.length;
+  if (n === 0) { counter.textContent = 'Select 2 or 3 essences to continue'; counter.classList.remove('ready'); btn.disabled = true; }
+  else if (n === 1) { counter.textContent = '1 essence selected — choose one more'; counter.classList.remove('ready'); btn.disabled = true; }
+  else { counter.textContent = n + ' essences selected — ready to continue'; counter.classList.add('ready'); btn.disabled = false; }
+}
+
+// ── CHIP SELECTION ────────────────────────────────────────────────────────────
+function selectChip(chip, field) {
+  // Deselect previous in this group
+  const row = document.getElementById('chips-' + field);
+  row.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+
+  chip.classList.add('selected');
+  fieldSelections[field] = chip.dataset.value;
+
+  // Toggle custom input
+  const wrap = document.getElementById('custom-wrap-' + field);
+  if (chip.dataset.value === 'custom') {
+    wrap.classList.add('open');
+    setTimeout(() => document.getElementById('input-' + field).focus(), 50);
+  } else {
+    wrap.classList.remove('open');
+  }
+}
+
+function getFieldValue(field) {
+  const sel = fieldSelections[field];
+  if (!sel) return null;
+  if (sel === 'custom') {
+    const val = document.getElementById('input-' + field).value.trim();
+    return val || null;
+  }
+  return sel;
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────────────────────
+function goTo(step) {
+  if (step === 3) {
+    const place  = getFieldValue('place')   || 'somewhere familiar';
+    const person = getFieldValue('person')  || 'a presence you recognise';
+    const feeling= getFieldValue('feeling') || 'something worth waking with';
+    renderBrief(place, person, feeling);
+  }
+
+  document.getElementById('step-' + currentStep).classList.remove('visible');
+  document.getElementById('dot-' + currentStep).classList.remove('active');
+  document.getElementById('dot-' + currentStep).classList.add('done');
+  document.getElementById('wrap-' + currentStep).classList.remove('active');
+
+  currentStep = step;
+  document.getElementById('step-' + step).classList.add('visible');
+  document.getElementById('dot-' + step).classList.remove('done');
+  document.getElementById('dot-' + step).classList.add('active');
+  document.getElementById('wrap-' + step).classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── GENERATE BRIEF ────────────────────────────────────────────────────────────
+function fill(template, place, person) {
+  return template.replace(/{place}/g, place).replace(/{person}/g, person);
+}
+
+function renderBrief(place, person, feeling) {
+  const essenceData = selected.map(id => ESSENCES.find(e => e.id === id));
+  const primary = essenceData[0];
+  const secondary = essenceData[1];
+  const tertiary = essenceData[2] || null;
+
+  const reviewer   = GOBLIN_REVIEWERS[Math.floor(Math.random() * GOBLIN_REVIEWERS.length)];
+  const refNum     = 'DEB-' + String(Math.floor(1000 + Math.random() * 9000));
+  const assessment = ASSESSMENTS[Math.floor(Math.random() * ASSESSMENTS.length)];
+  const today      = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  const classLabel = tertiary ? 'Complex Tri-Essence Blend' : 'Dual-Layer Composition';
+
+  const settingLayer  = fill(primary.settingMod, place, person) + ' ' + fill(secondary.settingMod, place, person);
+  const presenceLayer = fill(primary.presenceMod, place, person) + ' ' + fill(secondary.presenceMod, place, person);
+  const wakingLayer   = fill(tertiary ? tertiary.wakingMod : secondary.wakingMod, place, person);
+
+  const tagsHTML = essenceData.map(e =>
+    `<span class="essence-tag" style="color:${e.color};border-color:${e.color}44;background:${e.glow}">${e.name}</span>`
+  ).join('');
+
+  document.getElementById('brief-output').innerHTML = `
+    <div class="brief-stamp">
+      <div>
+        <div class="stamp-title">Vinaborg Dream Engineering Bureau</div>
+        <div class="stamp-title">Design Brief — Standard Template</div>
+      </div>
+      <div class="stamp-meta">
+        <div>Reference: ${refNum}</div>
+        <div>Filed: ${today}</div>
+        <div>${classLabel}</div>
+      </div>
+    </div>
+    <div class="brief-body">
+      <div class="brief-section">
+        <div class="brief-section-title">Essence Composition</div>
+        <div class="essence-tags">${tagsHTML}</div>
+        <div class="brief-text" style="margin-top:0.75rem">
+          ${essenceData.map(e => `<strong style="color:${e.color}">${e.name}</strong> — ${e.visual} <em>${e.function}.</em>`).join('<br>')}
+        </div>
+      </div>
+      <div class="brief-section">
+        <div class="brief-section-title">Setting Layer</div>
+        <div class="brief-text">The dream is anchored in <em>${place}</em>. ${settingLayer}</div>
+      </div>
+      <div class="brief-section">
+        <div class="brief-section-title">Presence Layer</div>
+        <div class="brief-text">${presenceLayer}</div>
+      </div>
+      <div class="brief-section">
+        <div class="brief-section-title">Waking Intention</div>
+        <div class="brief-text">The dreamer has named their intention: <em>"${feeling}."</em><br><br>${wakingLayer}</div>
+      </div>
+      <div class="brief-section">
+        <div class="brief-section-title">Engineer's Assessment</div>
+        <div class="assessment-box">${assessment}</div>
+      </div>
+    </div>
+    <div class="brief-footer">
+      <div class="footer-reviewer">Reviewed by: ${reviewer}</div>
+      <div class="footer-approved">✦ Approved for Distribution</div>
+    </div>
+  `;
+}
+
+// ── RESET ─────────────────────────────────────────────────────────────────────
+function reset() {
+  selected = [];
+  fieldSelections.place = fieldSelections.person = fieldSelections.feeling = null;
+
+  ['place','person','feeling'].forEach(f => {
+    document.getElementById('chips-' + f).querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+    document.getElementById('custom-wrap-' + f).classList.remove('open');
+    document.getElementById('input-' + f).value = '';
+  });
+
+  [1,2,3].forEach(i => {
+    document.getElementById('dot-' + i).classList.remove('active','done');
+    document.getElementById('wrap-' + i).classList.remove('active');
+  });
+  document.getElementById('step-' + currentStep).classList.remove('visible');
+  currentStep = 1;
+  document.getElementById('step-1').classList.add('visible');
+  document.getElementById('dot-1').classList.add('active');
+  document.getElementById('wrap-1').classList.add('active');
+
+  ESSENCES.forEach(e => document.getElementById('card-' + e.id).classList.remove('selected'));
+  updateCounter();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+buildGrid();
+</script>
+</body>
+</html>

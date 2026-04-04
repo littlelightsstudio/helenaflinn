@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Moonshade Dust",
+    "classification": "Base Solution",
+    "tags": ["Calm", "Serenity", "Peace"],
+    "books": ["Book 1", "Book 2"],
+    "short_description": "The foundational tranquilizer of dream engineering. Extracted from the Moonshade Fern. Fine silver-luminescent powder. Every dreamsmith learns this one first.",
+    "effect": "Calm, serenity, peace. The foundational tranquilizer in dream engineering — the baseline against which everything else is measured. Used wherever a dream needs to settle, breathe, or resolve gently.",
+    "source": "Extracted from the Moonshade Fern, a bioluminescent plant that thrives in total darkness. The fronds are harvested at peak glow, dried under controlled conditions, and ground into a fine luminescent powder with a characteristic soft silver shimmer. Low shelf life once opened — store in sealed nocturnal glass.",
+    "note": "Every apprentice dreamsmith learns Moonshade Dust on their first day. Most reach for it on their last. There is no shame in simplicity when simplicity works. — Vinaborg Academy, Introductory Dreamcraft Practicum."
+  },
+  {
+    "name": "Dreamspore Dust",
+    "classification": "Logic Function",
+    "tags": ["Choice", "Branch", "OR"],
+    "books": ["Book 2"],
+    "short_description": "The only essence capable of introducing a conditional branch into a dream template. The dreamer's own NE selects the path. Extraordinarily fine blue shimmer — store with care.",
+    "effect": "Choice. The only confirmed essence capable of introducing a conditional branch into a dream template — a logic OR. The dreamer's own Nocturnal Energy, shaped unconsciously by intention, selects the branch whose emotional signature fits closest.",
+    "source": "Ground from Dreamspore fungi — small, vivid blue mushrooms found in the deeper underground groves. Timing is critical: spores must be collected within minutes of the cap opening, or their branching properties are lost entirely. The resulting dust is an extraordinarily fine blue shimmer that disperses at the slightest air movement.",
+    "note": "A template with a Dreamspore branch is not two dreams. It is one dream that knows to ask a question. Design both paths as if only one will ever be needed — because for any given dreamer, only one will be. — Dreamcraft Manual, 4th Ed., Chapter 11."
+  },
+  {
+    "name": "Bellshade Powder",
+    "classification": "Emotional Modifier",
+    "tags": ["Unpredictability", "Surprise"],
+    "books": ["Book 2"],
+    "short_description": "Introduces the element of surprise into a template. Dark purple powder from the Bellshade plant, pulsating between hues. Highly moisture-reactive. Use sparingly.",
+    "effect": "Unpredictability. Introduces an element of surprise that the dreamer's subconscious cannot anticipate or pre-empt. Used to ensure a dream doesn't resolve too neatly — a hint of the unexpected before the landing.",
+    "source": "Derived from the Bellshade plant, a low-growing species with dark purple bell-shaped flowers. Dried and milled flowerheads produce a powder that pulsates between shades of purple with a faint visible shimmer. Highly reactive to moisture — even a damp workbench can compromise a batch.",
+    "note": "Bellshade Powder is best used sparingly, like seasoning. Too little and a dream feels scripted. Too much and you've built something no one — including the dreamer — will see coming. The second outcome is not a compliment. — Annotated margin note, Field Unit Handbook Vol. 3."
+  },
+  {
+    "name": "Lumenroot Serum",
+    "classification": "Base Solution",
+    "tags": ["Clarity", "Insight", "Familiarity"],
+    "books": ["Book 1", "Book 2"],
+    "short_description": "Warm golden serum from the Lumenroot plant. Grounds a dream in the familiar — everyday settings, recognizable environments. The baseline before complexity is added.",
+    "effect": "Clarity and insight, with a secondary quality of grounding a dream in the recognizable. Used to create familiar environments and everyday situations — scenes a dreamer navigates without friction. Also used to establish the baseline setting before more complex elements are layered in.",
+    "source": "A bright golden liquid with a warm glow, derived from Lumenroot — underground plants with roots that emit a gentle bioluminescent light. Harvested by careful extraction of the glowing sap. Stable shelf life; one of the more forgiving essences to work with.",
+    "note": "If a dream has no Lumenroot Serum anywhere in the mix, ask yourself why. You may be designing something more interesting. More likely, you are designing something that won't work. — Third-year dreamcraft seminar notes, Vinaborg Academy."
+  },
+  {
+    "name": "Nightbloom Serum",
+    "classification": "Base Solution",
+    "tags": ["Beauty", "Calm", "Serenity"],
+    "books": ["Book 1", "Book 2"],
+    "short_description": "Translucent blue serum from Nightbloom Lilies. Adds beauty and deep calm to any template. Often used to give a difficult dream sequence a gentle, peaceful resolution.",
+    "effect": "Beauty, elegance, and deep calm. Enhances the aesthetic quality of a dream environment — tranquil waters, soothing landscapes, the feeling of arriving somewhere safe. Often used to close a dream sequence or to give a difficult template a gentle resolution.",
+    "source": "A translucent liquid with a faint blue glow, obtained from Nightbloom Lilies — aquatic plants that float on dark underground ponds and open only at night. Their nectar is carefully drawn without disturbing the bloom. Delicate process; experienced harvesters only.",
+    "note": "Nightbloom Serum is the closest thing in the laboratory to silence. It does not add — it allows. Whatever you place it next to, it makes more of what it already is. — Field notes, Keenaacs Bustlespirit, Factory Floor Supervisor."
+  },
+  {
+    "name": "Clusterleaf Extract",
+    "classification": "Emotional Modifier",
+    "tags": ["Unity", "Harmony", "Connection"],
+    "books": ["Book 1", "Book 2"],
+    "short_description": "Clear green extract from colony-bonded Clusterleaf ferns. Makes everything in a dream feel connected — people, places, situations. Essential for group templates.",
+    "effect": "Unity, harmony, interconnectedness. Creates a sense in the dreamer that everything within the dream belongs together — people, places, situations all feel part of the same coherent whole. Essential for group dreams and for any template that relies on emotional bonding between dream characters.",
+    "source": "A clear green liquid with a faint glow, sourced from Clusterleaf ferns — plants that grow in bonded colonies, their roots interlocked into a single shared organism. The extract is drawn from the junction points where roots meet. Slight bitterness when handled; wear gloves.",
+    "note": "The goblins did not invent interconnectedness. They found a plant that already understood it and made a serum from its roots. — Popular saying, Vinaborg Tavern district."
+  },
+  {
+    "name": "Nightlight Dew",
+    "classification": "Base Solution",
+    "tags": ["Familiarity", "Safety", "Grounding"],
+    "books": ["Book 2"],
+    "short_description": "Collected from Nightlight Moss at pre-dawn. Instills the feeling of familiar, known environments — not specific places, but the emotional texture of them.",
+    "effect": "Familiarity. Makes the dreamer feel safe and grounded by recreating the emotional texture of environments from daily life — not specific places, but the feeling of them. School, home, a familiar street. The dreamer navigates without resistance.",
+    "source": "A clear liquid with a soft green glow, collected from Nightlight Moss — a bioluminescent moss that carpets underground forest floors, absorbing ambient darkness and emitting a gentle light. Dew is collected in the deepest pre-dawn hours when yield is highest.",
+    "note": "Familiarity is not the same as comfort. Nightlight Dew tells the dreamer they know where they are. Whether they like being there is a separate question, answered by everything else in the mix. — Dreamcraft Manual, 4th Ed., Chapter 4."
+  },
+  {
+    "name": "Murmurcap Essence",
+    "classification": "Emotional Modifier",
+    "tags": ["Revealing", "Discovering"],
+    "books": ["Book 2"],
+    "short_description": "Faint blue humming liquid from the Whispering Shroom fungus. Introduces moments of uncovering and discovery. Harvest in silence — vibration disrupts the process.",
+    "effect": "Revealing and discovering. Introduces situations of uncovering — hidden knowledge, unexpected truths, the sense of suddenly understanding something. Frequently paired with other essences to give the moment of discovery an emotional colour.",
+    "source": "A faint blue swirling liquid that emits a soft hum, extracted from Murmurcap fungi — also known as Whispering Shrooms, for the humming sound they produce as spores are released. Found growing in quiet alcoves of the underground forest. Harvesting must be done in near-silence, as vibration disrupts the extraction.",
+    "note": "Every properly designed dream has at least one moment where something is revealed. Murmurcap Essence does not decide what is found. It decides that finding matters. — Introductory Dreamcraft Practicum, Year 1, Vinaborg Academy."
+  },
+  {
+    "name": "Blowpuff Powder",
+    "classification": "Emotional Modifier",
+    "tags": ["Confrontation", "Resolve"],
+    "books": ["Book 2"],
+    "short_description": "Soft green powder from the Blowpuff Shroom. Introduces confrontation and the willingness to face difficult things. A cornerstone of counseling and mastery dream templates.",
+    "effect": "Confrontation, approach, standing your ground. Introduces a quality of directness into a dream — the dreamer faces rather than avoids. Often paired with an unsettling situation to create the template structure of a mastery or counseling dream: here is the difficult thing, and here is the ability to meet it.",
+    "source": "Soft green powder derived from the Blowpuff Shroom — a large, umbrella-shaped fungus with a gentle green glow, found in dark and damp underground groves. The spores are collected by careful percussion on the cap, which releases a controlled puff. Mild hallucinogenic if inhaled directly; standard laboratory protocols apply.",
+    "note": "Blowpuff Powder does not make a dreamer brave. It makes a dreamer willing to look. — Clinical notes, Vienna Institute for Juvenile Sleeping Disorders, IBMDN reference archive."
+  },
+  {
+    "name": "Moonpod Serum",
+    "classification": "Compound",
+    "tags": ["Friendly", "Pleasant", "Welcoming"],
+    "mixture": "Lumipod Gel + Moonbloom Essence",
+    "books": ["Book 1", "Book 2"],
+    "short_description": "Lumipod Gel with Moonbloom Essence. Glowing soft silver serum that creates warmth and friendliness in dream interactions. One of the most used compounds in standard dream templates.",
+    "effect": "Friendly and welcoming. Creates warmth in interactions with dream characters — the feeling that others are genuinely glad you are there. Used to establish cooperative group dynamics and to make unfamiliar people feel safe and pleasant to be around.",
+    "source": "Lumipod Gel combined with Moonbloom Essence — a compound preparation requiring a precise ratio. The resulting serum is a glowing soft silver liquid that emits a warm, inviting light. One of the more technically demanding essences to produce correctly; batch quality varies with seasonal Lumipod availability.",
+    "note": "Moonpod Serum is not a shortcut to emotional depth. It sets a tone. The dreamer fills in the rest. Do not mistake warmth for meaning — but do not underestimate warmth either. — Dreamcraft Manual, 4th Ed., Chapter 7."
+  },
+  {
+    "name": "Phantasm Fungus Extract",
+    "classification": "Compound",
+    "tags": ["Haunting", "Creepy", "Unsettling"],
+    "mixture": "Shadowcap Powder + Murmurcap Essence",
+    "books": ["Book 2"],
+    "short_description": "Shadowcap Powder with Murmurcap Essence. Dark shimmering powder with a haunting glow. Introduces spectral atmosphere — the feeling that something lingers just outside the frame.",
+    "effect": "Haunting and unsettling. Introduces ghostly atmosphere — spectral presences, eerie sounds, the feeling that something is watching from just outside the frame. Used in nightmare templates and in mastery dreams where the adversarial element needs genuine menace rather than simple danger.",
+    "source": "Shadowcap Powder combined with Murmurcap Essence. The resulting extract is a dark shimmering powder that emits a faint haunting glow. The Murmurcap component gives it a quality of revelation — whatever is unsettling in this dream will not stay hidden long.",
+    "note": "There is a difference between frightening a dreamer and disturbing one. Phantasm Fungus Extract aims for the second. Use it when the dream needs something that lingers. — Advanced Nightmare Engineering, Year 3 seminar notes, Vinaborg Academy."
+  },
+  {
+    "name": "Darkvine Oil",
+    "classification": "Compound",
+    "tags": ["Surprise", "Suspense", "Tension"],
+    "mixture": "Abyssal Ivy Oil + Nightvein Vine Essence",
+    "books": ["Book 2"],
+    "short_description": "Abyssal Ivy Oil with Nightvein Vine Essence. Dark viscous oil with an ominous shimmer. Introduces the sense that something is coming — suspense before the turn.",
+    "effect": "Surprise — specifically the darker, more unsettling kind. Creates a suspenseful and tense atmosphere, keeping a dream on edge before a turn. Distinct from Bellshade Powder's unpredictability; Darkvine Oil introduces the sense that something is coming, not that something unexpected has arrived.",
+    "source": "Abyssal Ivy Oil combined with Nightvein Vine Essence. A dark, viscous liquid with a slow-moving, ominous shimmer. Both base components are harvested from climbing vines — Abyssal Ivy from the deepest underground passages, Nightvein from roots parasitically attached to larger trees. Combine in a sealed vessel; the reaction produces a faint heat.",
+    "note": "Suspense is not fear. It is the space before fear. Darkvine Oil designs that space. — Field Unit Handbook Vol. 3."
+  },
+  {
+    "name": "Shadowbind Extract",
+    "classification": "Compound",
+    "tags": ["Discomfort", "Unease"],
+    "mixture": "Venomvine Extract + Gloomspore Dust",
+    "books": ["Book 2"],
+    "short_description": "Venomvine Extract with Gloomspore Dust. Introduces discomfort — not fear, but the feeling that something is slightly wrong. Key ingredient in counseling dream templates.",
+    "effect": "Discomfort and unease. Not fear — something subtler. The feeling of being in a situation you would rather not be in, of something being slightly wrong in a way you cannot immediately name. Used in counseling dream templates to recreate the emotional texture of buried anxieties.",
+    "source": "Venomvine Extract combined with Gloomspore Dust. A dark, thick liquid that emits a faint ghostly light. Both source plants are considered hazardous; extraction is a two-person procedure by laboratory protocol. Handle with documented caution.",
+    "note": "The discomfort Shadowbind Extract introduces is the point, not a side effect. A dream that doesn't ask anything of the dreamer is entertainment. This is not entertainment. — Clinical notes, IBMDN Vienna chapter reference archive."
+  },
+  {
+    "name": "Starblossom Nectar",
+    "classification": "Base Solution",
+    "tags": ["Wonder", "Awe", "Amazement"],
+    "books": ["Book 1", "Book 2"],
+    "short_description": "Sparkling clear liquid from night-blooming Starblossoms. The essential ingredient for wonder and awe. One of the oldest essences in Vinaborg's continuous production. Stable. Reliable. Necessary.",
+    "effect": "Wonder and awe. Adds elements of the extraordinary — starlit skies, celestial phenomena, the sense of witnessing something that should not be possible and is. One of the oldest essences in continuous production at Vinaborg.",
+    "source": "A sparkling clear liquid with tiny twinkling particles, harvested from Starblossoms — flowers that bloom only during the darkest hours of the night, their translucent petals emitting a gentle starlike twinkle. Blossoms must be collected at peak luminescence. Long shelf life; stable across most mixing conditions.",
+    "note": "Starblossom Nectar does not create wonder. It creates permission for it. The dreamer provides the rest from their own capacity for amazement — which, in children especially, is considerable. — Wizzbeek Rocketvolt, Field Unit Kids Division, internal address."
+  }
+]
