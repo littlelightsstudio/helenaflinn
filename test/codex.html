@@ -89,6 +89,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:f
 .filter-btn:hover{border-color:rgba(45,212,191,0.35);color:var(--cream)}
 .filter-btn.active{border-color:var(--teal);background:rgba(45,212,191,0.1);color:var(--teal-bright)}
 .filter-count{opacity:0.5;margin-left:2px}
+.shuffle-btn{font-family:var(--font-label);font-size:0.48rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;
+  padding:0.4rem 1rem;border-radius:20px;border:1px solid rgba(192,132,252,0.25);
+  background:rgba(192,132,252,0.06);color:var(--purple-light);cursor:pointer;transition:all var(--transition);margin-left:auto}
+.shuffle-btn:hover{border-color:var(--purple-light);background:rgba(192,132,252,0.12)}
 
 /* GRID */
 .codex-grid{max-width:1100px;margin:0 auto;padding:0 5vw 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem;position:relative;z-index:1}
@@ -230,7 +234,7 @@ fetch('codex-data.json')
 const CAT_META = {
   creature:   {label:'Fauna',      color:'#86efac'},
   flora:      {label:'Flora',      color:'#c084fc'},
-  location:   {label:'Locations',  color:'#d4a847'},
+  location:   {label:'Locations',  color:'#2dd4bf'},
   technology: {label:'Technology', color:'#d4944a'},
   lore:       {label:'Lore',       color:'#a78bfa'},
   shop:       {label:'Vinaborg',   color:'#fb923c'},
@@ -274,12 +278,18 @@ function init() {
     frow.appendChild(b);
   });
 
+  const shuffleBtn = mk('button','shuffle-btn');
+  shuffleBtn.textContent = '↻ Random 6';
+  shuffleBtn.onclick = ()=> shuffleEntries();
+  frow.appendChild(shuffleBtn);
+
   renderGrid();
 }
 
 function mk(tag,cls){const e=document.createElement(tag);e.className=cls;return e;}
 
 function setFilter(cat) {
+  shuffleMode = false;
   activeFilter = cat;
   document.querySelectorAll('.filter-btn').forEach(b=>{
     b.classList.toggle('active', b.dataset.cat===cat);
@@ -303,7 +313,9 @@ function renderGrid() {
   let count = 0;
   let classifiedCount = 0;
 
-  CODEX.forEach((e,i) => {
+  const source = shuffleMode ? shuffleSet : CODEX;
+
+  source.forEach((e,i) => {
     if(activeFilter!=='all' && e.cat!==activeFilter) return;
     if(q && !(e.name.toLowerCase().includes(q) || e.desc.toLowerCase().includes(q) || e.tag.toLowerCase().includes(q) || (e.full&&e.full.toLowerCase().includes(q)) || e.cat.toLowerCase().includes(q))) return;
 
@@ -376,7 +388,51 @@ function renderGrid() {
   },50);
 }
 
-document.getElementById('search').addEventListener('input', renderGrid);
+document.getElementById('search').addEventListener('input', function(){
+  shuffleMode = false;
+  renderGrid();
+});
+
+let shuffleMode = false;
+let shuffleSet = [];
+
+function shuffleEntries() {
+  shuffleMode = true;
+  activeFilter = 'all';
+  document.getElementById('search').value = '';
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat==='all'));
+
+  // Pick 6 random, ensuring at least 1 classified
+  const pub = CODEX.filter(e => !e.classified);
+  const cls = CODEX.filter(e => e.classified);
+  const picked = [];
+  const usedIdx = new Set();
+
+  // 1 classified
+  if (cls.length) {
+    const ci = Math.floor(Math.random() * cls.length);
+    picked.push(cls[ci]);
+  }
+
+  // 5 public (or fewer if not enough)
+  while (picked.length < 6 && picked.length < pub.length + cls.length) {
+    const ri = Math.floor(Math.random() * pub.length);
+    if (!usedIdx.has(ri)) {
+      usedIdx.add(ri);
+      picked.push(pub[ri]);
+    }
+  }
+
+  // Shuffle the order
+  for (let i = picked.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [picked[i], picked[j]] = [picked[j], picked[i]];
+  }
+
+  shuffleSet = picked;
+  renderGrid();
+  updateTerminalResult('SHUFFLE: 6 random entries drawn from the archive.');
+}
 
 // Particles
 const pc=document.getElementById('hero-particles');
