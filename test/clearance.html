@@ -6,6 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Pre-Departure Clearance Form — IBMDN | The Helena Flinn Chronicles</title>
 <meta name="description" content="All visitors to Vinaborg require bureau clearance. Complete your IBMDN pre-departure assessment to receive your classification and field assignment.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
@@ -107,6 +108,46 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:f
 /* RESTART */
 .restart-link{display:block;text-align:center;margin-top:2rem;font-family:var(--font-label);font-size:0.48rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);cursor:pointer;transition:color var(--transition);border:none;background:none}
 .restart-link:hover{color:var(--teal)}
+
+/* EXPORT CARD (hidden, rendered offscreen for html2canvas) */
+.export-card{position:fixed;left:-9999px;top:0;z-index:-1;font-family:'Crimson Pro',Georgia,serif;color:#f5f0e8;overflow:hidden}
+.export-card *{box-sizing:border-box;margin:0;padding:0}
+.ec-hero{width:100%;position:relative;overflow:hidden}
+.ec-hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.ec-hero-grad{width:100%;height:100%;position:absolute;inset:0}
+.ec-hero-overlay{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,#08060f,transparent)}
+.ec-body{padding:0;position:relative}
+.ec-header{display:flex;justify-content:space-between;align-items:center;padding:16px 28px 0}
+.ec-org{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:300;letter-spacing:0.35em;text-transform:uppercase;color:#2dd4bf;opacity:0.7}
+.ec-ref{font-family:'Courier New',monospace;font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:#0f766e;opacity:0.6}
+.ec-content{padding:12px 28px 20px}
+.ec-class{font-family:'Josefin Sans',sans-serif;font-size:8px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:#2dd4bf;margin-bottom:6px}
+.ec-title{font-family:'Cinzel',serif;font-size:28px;font-weight:400;letter-spacing:0.05em;color:#f5f0e8;margin-bottom:4px}
+.ec-ne{font-family:'Courier New',monospace;font-size:8px;letter-spacing:0.08em;color:#7c7591;margin-bottom:3px}
+.ec-assign{font-family:'Josefin Sans',sans-serif;font-size:8px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:#d4cfc4;margin-bottom:16px}
+.ec-loc{padding:10px 14px;background:rgba(45,212,191,0.04);border-left:2px solid #0f766e;border-radius:0 6px 6px 0;margin-bottom:16px}
+.ec-loc-name{font-family:'Cinzel',serif;font-size:11px;font-weight:600;color:#f5f0e8;margin-bottom:3px}
+.ec-loc-desc{font-size:11px;font-style:italic;color:#d4cfc4;line-height:1.55}
+.ec-dossier{font-size:12px;font-style:italic;color:#e8e0d0;line-height:1.7;margin-bottom:14px}
+.ec-footnote{font-size:10px;font-style:italic;color:#7c7591;line-height:1.5;padding-left:10px;border-left:2px solid rgba(45,212,191,0.15);margin-bottom:16px}
+.ec-footer{display:flex;justify-content:space-between;align-items:center;padding:10px 28px 14px;border-top:1px solid rgba(45,212,191,0.1)}
+.ec-seal{width:24px;height:24px;opacity:0.35}
+.ec-url{font-family:'Josefin Sans',sans-serif;font-size:8px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:#0f766e}
+
+/* Story-specific overrides */
+.export-card.story .ec-title{font-size:32px}
+.export-card.story .ec-dossier{font-size:13px;line-height:1.75}
+.export-card.story .ec-content{padding:16px 36px 24px}
+.export-card.story .ec-header{padding:20px 36px 0}
+.export-card.story .ec-footer{padding:14px 36px 20px}
+.export-card.story .ec-ne{font-size:9px}
+.export-card.story .ec-assign{font-size:9px}
+
+/* Download buttons */
+.dl-actions{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem}
+.dl-btn{font-family:var(--font-label);font-size:0.45rem;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;padding:0.45rem 1rem;border-radius:6px;border:1px solid rgba(192,132,252,0.25);background:rgba(192,132,252,0.05);color:var(--purple-light);cursor:pointer;transition:all var(--transition)}
+.dl-btn:hover{border-color:var(--purple-light);background:rgba(192,132,252,0.1)}
+.dl-btn:disabled{opacity:0.3;cursor:wait}
 
 /* FOOTER */
 footer{text-align:center;padding:2rem 5vw;position:relative;z-index:1}
@@ -228,11 +269,18 @@ footer a:hover{color:var(--teal)}
           <button class="action-btn" id="share-btn" onclick="shareResult()">Copy Share Text</button>
           <button class="action-btn" onclick="location.href='../index.html#codex'">Browse the Codex</button>
         </div>
+        <div class="dl-actions">
+          <button class="dl-btn" id="dl-fb" onclick="downloadCard('fb')">Download for Facebook</button>
+          <button class="dl-btn" id="dl-ig" onclick="downloadCard('story')">Download for Instagram</button>
+        </div>
         <button class="restart-link" onclick="restart()">Retake Assessment</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- EXPORT CARD (offscreen, rendered by html2canvas) -->
+<div class="export-card" id="export-card"></div>
 
 <footer>
   <a href="../index.html">helenaflinn.com</a>
@@ -368,6 +416,18 @@ const PROFILES = {
   }
 };
 
+// GRADIENTS & IMAGE PATHS
+const VISUALS = {
+  engineer:    {gradient:'linear-gradient(135deg, #0f2a1a 0%, #1a3a2a 50%, #0a1a10 100%)', img:'../images/quiz/quiz-engineer.jpg'},
+  archivist:   {gradient:'linear-gradient(135deg, #1a0f2a 0%, #2a1540 50%, #0f0a1a 100%)', img:'../images/quiz/quiz-archivist.jpg'},
+  operative:   {gradient:'linear-gradient(135deg, #1a1a0f 0%, #2a2510 50%, #1a1508 100%)', img:'../images/quiz/quiz-operative.jpg'},
+  receptive:   {gradient:'linear-gradient(135deg, #0f1a2a 0%, #0a2040 50%, #0f0f1a 100%)', img:'../images/quiz/quiz-receptive.jpg'},
+  coordinator: {gradient:'linear-gradient(135deg, #1a1520 0%, #251a30 50%, #1a1018 100%)', img:'../images/quiz/quiz-coordinator.jpg'},
+  resonant:    {gradient:'linear-gradient(135deg, #0f1a2a 0%, #1a1040 50%, #200a30 100%)', img:'../images/quiz/quiz-resonant.jpg'},
+};
+
+const SEAL_SVG = `<svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><circle cx="30" cy="30" r="28" stroke="rgba(45,212,191,0.4)" stroke-width="0.5"/><circle cx="30" cy="30" r="22" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/><circle cx="30" cy="30" r="8" stroke="rgba(45,212,191,0.5)" stroke-width="0.5"/><line x1="30" y1="2" x2="30" y2="14" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/><line x1="30" y1="46" x2="30" y2="58" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/><line x1="2" y1="30" x2="14" y2="30" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/><line x1="46" y1="30" x2="58" y2="30" stroke="rgba(45,212,191,0.3)" stroke-width="0.5"/></svg>`;
+
 // STATE
 let currentQ = 0;
 let scores = {E:0, A:0, F:0, X:0};
@@ -447,8 +507,10 @@ function showResult() {
   document.getElementById('r-dossier').textContent = p.dossier;
   document.getElementById('r-footnote').textContent = p.footnote;
 
-  // Store share text
+  // Store for share + export
   window._shareText = p.share;
+  window._currentProfile = p;
+  window._currentRef = ref;
 
   // Expand form box for result
   document.querySelector('.form-box').style.borderColor = 'rgba(45,212,191,0.35)';
@@ -473,6 +535,94 @@ function restart() {
   document.getElementById('state-intro').style.display = 'block';
   document.querySelector('.form-box').style.borderColor = '';
   document.getElementById('nl-ok').style.display = 'none';
+}
+
+// EXPORT CARD
+function buildExportCard(size) {
+  const p = window._currentProfile;
+  const ref = window._currentRef;
+  const v = VISUALS[p.slug];
+  const isFB = size === 'fb';
+  const w = isFB ? 1200 : 1080;
+  const h = isFB ? 630 : 1920;
+  const heroH = isFB ? 250 : 600;
+
+  // Truncate dossier for FB
+  const dossierText = isFB
+    ? p.dossier.split('. ').slice(0, 2).join('. ') + '.'
+    : p.dossier;
+
+  const card = document.getElementById('export-card');
+  card.className = 'export-card' + (isFB ? '' : ' story');
+  card.style.width = w + 'px';
+  card.style.height = h + 'px';
+  card.style.background = '#08060f';
+
+  card.innerHTML = `
+    <div class="ec-hero" style="width:${w}px;height:${heroH}px;position:relative">
+      <div class="ec-hero-grad" style="background:${v.gradient}"></div>
+      <img class="ec-hero-img" src="${v.img}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"
+           onerror="this.style.display='none'">
+      <div class="ec-hero-overlay"></div>
+    </div>
+    <div class="ec-body" style="background:#08060f">
+      <div class="ec-header">
+        <span class="ec-org">IBMDN — Classification Complete</span>
+        <span class="ec-ref">${ref}</span>
+      </div>
+      <div class="ec-content">
+        <div class="ec-class">${p.classification}</div>
+        <div class="ec-title">${p.title}</div>
+        <div class="ec-ne">${p.ne}</div>
+        <div class="ec-assign">${p.assignment}</div>
+        <div class="ec-loc">
+          <div class="ec-loc-name">${p.locName}</div>
+          <div class="ec-loc-desc">${isFB ? '' : p.locDesc}</div>
+        </div>
+        <div class="ec-dossier">"${dossierText}"</div>
+        <div class="ec-footnote">${p.footnote}</div>
+      </div>
+      <div class="ec-footer">
+        <div class="ec-seal">${SEAL_SVG}</div>
+        <span class="ec-url">helenaflinn.com/clearance</span>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+async function downloadCard(size) {
+  const btn = document.getElementById(size === 'fb' ? 'dl-fb' : 'dl-ig');
+  btn.disabled = true;
+  btn.textContent = 'Rendering...';
+
+  const card = buildExportCard(size);
+
+  // Small delay to let images load
+  await new Promise(r => setTimeout(r, 300));
+
+  try {
+    const canvas = await html2canvas(card, {
+      scale: 2,
+      backgroundColor: '#08060f',
+      useCORS: true,
+      logging: false,
+      width: parseInt(card.style.width),
+      height: parseInt(card.style.height),
+    });
+
+    const link = document.createElement('a');
+    const label = size === 'fb' ? 'facebook' : 'instagram';
+    link.download = `ibmdn-${window._currentProfile.slug}-${label}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) {
+    console.error('Export failed:', e);
+  }
+
+  btn.disabled = false;
+  btn.textContent = size === 'fb' ? 'Download for Facebook' : 'Download for Instagram';
 }
 
 // HAMBURGER
