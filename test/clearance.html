@@ -270,6 +270,7 @@ footer a:hover{color:var(--teal)}
           <button class="action-btn" onclick="location.href='../index.html#codex'">Browse the Codex</button>
         </div>
         <div class="dl-actions">
+          <button class="dl-btn" id="dl-share" onclick="nativeShare()" style="display:none">Share Your Classification</button>
           <button class="dl-btn" id="dl-fb" onclick="downloadCard('fb')">Download for Facebook</button>
           <button class="dl-btn" id="dl-ig" onclick="downloadCard('story')">Download for Instagram</button>
         </div>
@@ -536,6 +537,59 @@ function restart() {
   document.querySelector('.form-box').style.borderColor = '';
   document.getElementById('nl-ok').style.display = 'none';
 }
+
+// NATIVE SHARE (mobile)
+async function nativeShare() {
+  const btn = document.getElementById('dl-share');
+  btn.disabled = true;
+  btn.textContent = 'Preparing...';
+
+  const card = buildExportCard('story');
+  await new Promise(r => setTimeout(r, 300));
+
+  try {
+    const canvas = await html2canvas(card, {
+      scale: 2,
+      backgroundColor: '#08060f',
+      useCORS: true,
+      logging: false,
+      width: 1080,
+      height: 1920,
+    });
+
+    canvas.toBlob(async (blob) => {
+      const file = new File([blob], `ibmdn-${window._currentProfile.slug}.png`, {type: 'image/png'});
+      try {
+        await navigator.share({
+          title: 'IBMDN Classification: ' + window._currentProfile.title,
+          text: window._shareText,
+          files: [file]
+        });
+      } catch(e) {
+        // User cancelled or share failed — fall back to download
+        const link = document.createElement('a');
+        link.download = file.name;
+        link.href = URL.createObjectURL(blob);
+        link.click();
+      }
+      btn.disabled = false;
+      btn.textContent = 'Share Your Classification';
+    }, 'image/png');
+  } catch(e) {
+    console.error('Share failed:', e);
+    btn.disabled = false;
+    btn.textContent = 'Share Your Classification';
+  }
+}
+
+// Show native share button on mobile, download buttons on desktop
+function setupShareButtons() {
+  const canShare = navigator.share && navigator.canShare && navigator.canShare({files: [new File([''], 'test.png', {type: 'image/png'})]});
+  if (canShare) {
+    document.getElementById('dl-share').style.display = '';
+  }
+}
+setupShareButtons();
 
 // EXPORT CARD
 function buildExportCard(size) {
