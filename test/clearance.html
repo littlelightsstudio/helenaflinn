@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pre-Departure Clearance Form — IBMDN | The Helena Flinn Chronicles</title>
+<meta name="description" content="All visitors to Vinaborg require bureau clearance. Complete your IBMDN pre-departure assessment to receive your classification and field assignment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{--void:#08060f;--deep:#110d1f;--mid:#1c1430;--surface:#251b3d;--teal:#2dd4bf;--teal-bright:#5eead4;--teal-dim:#0f766e;--green:#86efac;--purple-light:#c084fc;--gold:#d4a847;--cream:#f5f0e8;--warm:#e8e0d0;--stone:#d4cfc4;--muted-text:#7c7591;--font-display:'Cinzel',serif;--font-body:'Crimson Pro',serif;--font-label:'Josefin Sans',sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:var(--font-body);background:var(--void);color:var(--cream);min-height:100vh;overflow-x:hidden}
+
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(45,212,191,0.04) 0%,transparent 60%),
+  radial-gradient(ellipse 50% 60% at 20% 70%,rgba(192,132,252,0.05) 0%,transparent 50%)}
+.particle{position:fixed;border-radius:50%;pointer-events:none;animation:floatUp linear infinite}
+@keyframes floatUp{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:0.5}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,191,0.08)}
+.nav-logo{font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.25em;color:var(--teal);text-decoration:none;text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:var(--font-label);font-size:0.65rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color var(--transition)}
+.nav-links a:hover{color:var(--teal-bright)}
+.hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px;z-index:101}
+.hamburger span{display:block;width:20px;height:1.5px;background:var(--teal);transition:all var(--transition)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+/* FORM CONTAINER */
+.form-wrap{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:7rem 2rem 4rem}
+.form-box{width:100%;max-width:580px;border:1px solid rgba(45,212,191,0.25);border-radius:3px;background:rgba(8,6,15,0.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:relative;overflow:hidden;transition:border-color var(--transition)}
+.form-box::before{content:'';position:absolute;inset:5px;border:1px solid rgba(45,212,191,0.08);border-radius:2px;pointer-events:none}
+
+/* FORM HEADER */
+.form-header{display:flex;justify-content:space-between;align-items:flex-start;padding:1.5rem 2rem 0}
+.form-org{font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.35em;text-transform:uppercase;color:var(--teal);opacity:0.7}
+.form-id{font-family:'Courier New',monospace;font-size:0.45rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal-dim);opacity:0.5}
+
+/* FORM BODY */
+.form-body{padding:1.5rem 2rem 2rem}
+.form-title{font-family:var(--font-display);font-size:clamp(1.3rem,3.5vw,1.8rem);font-weight:400;letter-spacing:0.05em;color:var(--cream);line-height:1.25;margin-bottom:0.3rem}
+.form-title span{background:linear-gradient(135deg,var(--teal-bright),var(--green),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.form-subtitle{font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted-text);margin-bottom:2rem}
+
+.form-stamps{display:flex;gap:1.5rem;margin-bottom:1.75rem}
+.stamp{font-family:'Courier New',monospace;font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-dim);display:flex;align-items:center;gap:0.4rem}
+.stamp-dot{width:5px;height:5px;border-radius:50%;border:1px solid var(--teal-dim)}
+
+.form-context{font-size:0.95rem;font-style:italic;color:var(--stone);line-height:1.7;margin-bottom:0.75rem}
+.form-note{font-size:0.85rem;font-style:italic;color:var(--muted-text);line-height:1.6;margin-bottom:2rem}
+
+/* BUTTONS */
+.btn-begin{font-family:var(--font-label);font-size:0.68rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--void);background:var(--teal);border:none;padding:1rem 2.5rem;cursor:pointer;transition:all var(--transition);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);width:100%}
+.btn-begin:hover{background:var(--teal-bright);box-shadow:0 8px 30px rgba(45,212,191,0.3)}
+
+/* QUESTION STATE */
+.form-progress{font-family:'Courier New',monospace;font-size:0.45rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:1.5rem;opacity:0.6}
+.form-question{font-size:1rem;font-style:italic;color:var(--stone);line-height:1.7;margin-bottom:1.75rem}
+.answer-list{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
+.answer-btn{width:100%;text-align:left;padding:1rem 1.25rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;font-family:var(--font-body);font-size:0.92rem;color:var(--stone);cursor:pointer;transition:all var(--transition);line-height:1.5}
+.answer-btn:hover{border-color:var(--teal);color:var(--cream);background:rgba(45,212,191,0.04);transform:translateX(4px)}
+
+/* PROCESSING STATE */
+.processing{text-align:center;padding:3rem 0}
+.processing-text{font-family:'Courier New',monospace;font-size:0.7rem;color:var(--teal);letter-spacing:0.1em;animation:pulse-text 1.5s ease-in-out infinite}
+@keyframes pulse-text{0%,100%{opacity:0.4}50%{opacity:1}}
+
+/* RESULT STATE */
+.result-wrap{padding:0 2rem 2rem}
+.result-classification{font-family:var(--font-label);font-size:0.45rem;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
+.result-title{font-family:var(--font-display);font-size:clamp(1.4rem,3.5vw,2rem);font-weight:400;letter-spacing:0.06em;color:var(--cream);margin-bottom:0.3rem}
+.result-ne{font-family:'Courier New',monospace;font-size:0.5rem;letter-spacing:0.1em;color:var(--muted-text);margin-bottom:0.3rem}
+.result-assignment{font-family:var(--font-label);font-size:0.48rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);margin-bottom:1.75rem}
+
+.result-location{padding:1rem 1.25rem;background:rgba(45,212,191,0.03);border-left:2px solid var(--teal-dim);border-radius:0 8px 8px 0;margin-bottom:1.75rem}
+.result-loc-name{font-family:var(--font-display);font-size:0.72rem;font-weight:600;color:var(--cream);margin-bottom:0.3rem}
+.result-loc-desc{font-size:0.82rem;font-style:italic;color:var(--stone);line-height:1.6}
+
+.result-dossier{font-size:0.92rem;font-style:italic;color:var(--warm);line-height:1.75;margin-bottom:1.25rem}
+.result-footnote{font-size:0.78rem;font-style:italic;color:var(--muted-text);line-height:1.6;padding-left:0.75rem;border-left:2px solid rgba(45,212,191,0.12);margin-bottom:2rem}
+
+/* NEWSLETTER */
+.result-nl{padding:1.5rem;background:rgba(45,212,191,0.03);border:1px solid rgba(45,212,191,0.12);border-radius:8px;margin-bottom:1.5rem}
+.result-nl-head{font-family:var(--font-display);font-size:0.6rem;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.5rem}
+.result-nl-body{font-size:0.82rem;color:var(--stone);font-style:italic;line-height:1.6;margin-bottom:1rem}
+.nl-row{display:flex;gap:0.5rem}
+.nl-input{flex:1;background:var(--surface);border:1px solid rgba(45,212,191,0.18);border-radius:6px;padding:0.6rem 0.8rem;font-family:var(--font-body);font-size:0.85rem;color:var(--cream);outline:none}
+.nl-input::placeholder{color:var(--muted-text);font-style:italic}
+.nl-input:focus{border-color:var(--teal)}
+.nl-btn{font-family:var(--font-label);font-size:0.5rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.6rem 1.2rem;background:var(--teal);color:var(--void);border:none;border-radius:6px;cursor:pointer;transition:background var(--transition)}
+.nl-btn:hover{background:var(--teal-bright)}
+.nl-small{font-size:0.7rem;color:var(--muted-text);font-style:italic;margin-top:0.5rem}
+.nl-success{color:var(--teal);font-style:italic;font-size:0.85rem;display:none}
+
+/* SHARE/DOWNLOAD */
+.result-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
+.action-btn{font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;padding:0.5rem 1.2rem;border-radius:6px;border:1px solid rgba(45,212,191,0.2);background:transparent;color:var(--teal);cursor:pointer;transition:all var(--transition)}
+.action-btn:hover{border-color:var(--teal);background:rgba(45,212,191,0.06)}
+.action-btn.copied{border-color:var(--green);color:var(--green)}
+
+/* RESTART */
+.restart-link{display:block;text-align:center;margin-top:2rem;font-family:var(--font-label);font-size:0.48rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);cursor:pointer;transition:color var(--transition);border:none;background:none}
+.restart-link:hover{color:var(--teal)}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem 5vw;position:relative;z-index:1}
+footer a{font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);text-decoration:none;transition:color var(--transition)}
+footer a:hover{color:var(--teal)}
+
+@media(max-width:800px){
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:0;right:0;width:260px;height:100vh;background:rgba(8,6,15,0.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    flex-direction:column;padding:5rem 2rem 2rem;gap:2rem;border-left:1px solid rgba(45,212,191,0.1);
+    transform:translateX(100%);transition:transform var(--transition)}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:0.75rem}
+  .form-body{padding:1.25rem 1.5rem 1.75rem}
+  .form-header{padding:1.25rem 1.5rem 0}
+  .result-wrap{padding:0 1.5rem 1.75rem}
+  .form-stamps{gap:0.75rem;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div id="particles"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Helena Flinn Chronicles</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html#books">The Books</a></li>
+    <li><a href="../index.html#codex">The Codex</a></li>
+    <li><a href="../index.html#world-intro">The World</a></li>
+    <li><a href="../faq.html">FAQ</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="form-wrap">
+  <div class="form-box" id="form-box">
+    <!-- INTRO STATE -->
+    <div id="state-intro">
+      <div class="form-header">
+        <span class="form-org">IBMDN</span>
+        <span class="form-id">Form V-001</span>
+      </div>
+      <div class="form-body">
+        <h1 class="form-title">Pre-Departure<br><span>Clearance Form</span></h1>
+        <div class="form-subtitle">Vinaborg Visitor Access &middot; Classification Assessment</div>
+        <div class="form-stamps">
+          <span class="stamp"><span class="stamp-dot"></span> Mandatory</span>
+          <span class="stamp"><span class="stamp-dot"></span> Do not skip</span>
+          <span class="stamp"><span class="stamp-dot"></span> 2 minutes</span>
+        </div>
+        <p class="form-context">Beneath the streets of Vienna, a goblin city builds human dreams. Before you enter, the Bureau needs to classify you.</p>
+        <p class="form-note">There are no wrong answers. There are, however, answers the bureau finds notable.</p>
+        <button class="btn-begin" onclick="startQuiz()">Begin Assessment &rarr;</button>
+      </div>
+    </div>
+
+    <!-- QUESTION STATE -->
+    <div id="state-question" style="display:none">
+      <div class="form-header">
+        <span class="form-org">IBMDN</span>
+        <span class="form-id" id="q-field-id">Field 01 of 05</span>
+      </div>
+      <div class="form-body">
+        <div class="form-progress" id="q-progress">Field 01 — Primary Purpose of Visit</div>
+        <p class="form-question" id="q-text"></p>
+        <ul class="answer-list" id="q-answers"></ul>
+      </div>
+    </div>
+
+    <!-- PROCESSING STATE -->
+    <div id="state-processing" style="display:none">
+      <div class="form-header">
+        <span class="form-org">IBMDN</span>
+        <span class="form-id">Processing</span>
+      </div>
+      <div class="form-body">
+        <div class="processing">
+          <p class="processing-text">Your responses are being processed by the<br>Vinaborg Classification Bureau. Please stand by.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULT STATE -->
+    <div id="state-result" style="display:none">
+      <div class="form-header">
+        <span class="form-org">IBMDN — Classification Complete</span>
+        <span class="form-id" id="r-ref"></span>
+      </div>
+      <div class="form-body" style="padding-bottom:0.5rem">
+        <div class="result-classification" id="r-class"></div>
+        <h2 class="result-title" id="r-title"></h2>
+        <div class="result-ne" id="r-ne"></div>
+        <div class="result-assignment" id="r-assign"></div>
+      </div>
+      <div class="result-wrap">
+        <div class="result-location">
+          <div class="result-loc-name" id="r-loc-name"></div>
+          <div class="result-loc-desc" id="r-loc-desc"></div>
+        </div>
+        <div class="result-dossier" id="r-dossier"></div>
+        <div class="result-footnote" id="r-footnote"></div>
+
+        <div class="result-nl" id="nl-block">
+          <div class="result-nl-head">Your full field dossier will be transmitted to the address below.</div>
+          <div class="result-nl-body">The Nocturnal Dispatch. One arrival per month, on the first. Exclusive Codex entries, notes from the writing desk, and updates from Vinaborg.</div>
+          <form class="nl-row" action="https://assets.mailerlite.com/jsonp/955336/forms/182296130877392293/subscribe" method="post" target="_blank" onsubmit="document.getElementById('nl-ok').style.display='block'">
+            <input class="nl-input" type="email" name="fields[email]" placeholder="your@email.com" required>
+            <button class="nl-btn" type="submit">Transmit</button>
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="anticsrf" value="true">
+          </form>
+          <div class="nl-small">Unsubscribe at any time. The bureau does not retain email addresses beyond operational necessity.</div>
+          <div class="nl-success" id="nl-ok">Transmission confirmed. Your dossier is en route.</div>
+        </div>
+
+        <div class="result-actions">
+          <button class="action-btn" id="share-btn" onclick="shareResult()">Copy Share Text</button>
+          <button class="action-btn" onclick="location.href='../index.html#codex'">Browse the Codex</button>
+        </div>
+        <button class="restart-link" onclick="restart()">Retake Assessment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="../index.html">helenaflinn.com</a>
+</footer>
+
+<script>
+// DATA
+const QUESTIONS = [
+  {
+    field: 'Primary Purpose of Visit',
+    prompt: 'Select the option that most accurately describes your reason for requesting entry to Vinaborg. This information is used for routing purposes only.',
+    answers: [
+      {text: 'Research. I want to understand how things work.', type: 'E'},
+      {text: 'Curiosity. I heard something and I had to follow it.', type: 'A'},
+      {text: 'Someone asked me to come. I don\'t say no easily.', type: 'F'},
+      {text: 'I\'m not entirely sure. I just knew I needed to be here.', type: 'X'},
+    ]
+  },
+  {
+    field: 'Location Preference',
+    prompt: 'The bureau is routing your visitor pass. Select the area of Vinaborg you are most drawn to.',
+    answers: [
+      {text: 'The Dreamcraft Manufactory floor. I want to see how it works.', type: 'E'},
+      {text: 'The Brightspire Arcadia library. I want to read everything first.', type: 'A'},
+      {text: 'Shadowlight Promenade. I\'ll find out where things are by talking to people.', type: 'F'},
+      {text: 'The Violet Expanse. I\'ll walk until the plains tell me something.', type: 'X'},
+    ]
+  },
+  {
+    field: 'Post-Dream Behaviour',
+    prompt: 'The bureau monitors dream receptivity across all visitor classifications. Select the response that most closely matches your standard behaviour upon waking from a vivid dream.',
+    answers: [
+      {text: 'I try to reconstruct it logically. What was the sequence?', type: 'E'},
+      {text: 'I write it down before it fades. Every detail matters.', type: 'A'},
+      {text: 'I feel it for hours. The emotion lingers longer than the images.', type: 'F'},
+      {text: 'I forget it immediately, but carry something unnamed with me all day.', type: 'X'},
+    ]
+  },
+  {
+    field: 'Response to Unknown Stimulus',
+    prompt: 'Scenario for classification purposes. A Vinaborg field unit leaves an unmarked package outside your door. No note. Your response:',
+    answers: [
+      {text: 'Open it methodically. Check contents, assess origin.', type: 'E'},
+      {text: 'Open it immediately. Caution and curiosity don\'t coexist well.', type: 'A'},
+      {text: 'Wait. Someone will explain. They usually do.', type: 'F'},
+      {text: 'You already knew it was coming. You\'re not sure how.', type: 'X'},
+    ]
+  },
+  {
+    field: 'Confidentiality Assessment',
+    prompt: 'The bureau asks you to keep a secret. Your response:',
+    answers: [
+      {text: 'Keep it. A secret is just information with restricted access.', type: 'E'},
+      {text: 'Keep it — but document it somewhere, just in case.', type: 'A'},
+      {text: 'Keep it. But it costs you something.', type: 'F'},
+      {text: 'You already have seventeen of your own. One more is fine.', type: 'X'},
+    ]
+  }
+];
+
+const PROFILES = {
+  engineer: {
+    slug: 'engineer',
+    title: 'The Engineer',
+    classification: 'Vinaborg Visitor — Class II Analytical',
+    ne: 'NE Sensitivity: Stable. Measurable. Within expected parameters.',
+    assignment: 'Assignment: Factory floor observation, R&D division access',
+    locName: 'Vinaborg Dreamcraft Manufactory',
+    locDesc: 'The dream factory at the heart of Vinaborg — loud, warm, and running continuously since before Vienna existed. Every dream delivered to the city above originates here.',
+    dossier: 'Your intake profile indicates a systematic approach to unfamiliar environments — methodical, low-risk, high-information-retention. The bureau considers this an asset. You will find Vinaborg operates on logic you can follow, once you understand that some of its variables are not visible to the standard human instrument range. The Dream Deck will make immediate sense to you. The factory floor supervisors will appreciate the questions.',
+    footnote: 'One anomaly noted in your NE baseline scan. Logged. Not yet a concern.',
+    share: 'The IBMDN classified me as Class II Analytical. Assigned to the Dreamcraft Manufactory. The Dream Deck will apparently make immediate sense to me. Yours: helenaflinn.com/clearance'
+  },
+  archivist: {
+    slug: 'archivist',
+    title: 'The Archivist',
+    classification: 'Vinaborg Visitor — Class III Observational',
+    ne: 'NE Sensitivity: Heightened. Observational bias confirmed.',
+    assignment: 'Assignment: Academy access, Nocturne Codex reading privileges (standard tier)',
+    locName: 'Brightspire Arcadia — The Vinaborg Academy',
+    locDesc: 'The education district of Vinaborg, centred on a grand steampunk library. The most prestigious institution in goblin society. Its central library holds records that predate the city above it.',
+    dossier: 'Your profile indicates strong observational instincts and an above-average tendency to document, retain, and cross-reference. The bureau notes that visitors of your classification frequently leave Vinaborg carrying significantly more information than they arrived with. This is not discouraged — the Nocturne Codex exists for precisely this reason. We ask only that you refrain from noting anything that appears to already be watching you back.',
+    footnote: 'The Academy library has a restricted wing. Your clearance does not currently extend to it. This may change.',
+    share: 'Vinaborg Visitor — Class III Observational. Assigned to the Academy library. The bureau asks only that I refrain from noting anything that appears to already be watching me back. helenaflinn.com/clearance'
+  },
+  operative: {
+    slug: 'operative',
+    title: 'The Field Operative',
+    classification: 'Vinaborg Visitor — Class I Relational',
+    ne: 'NE Sensitivity: Responsive. Strongly influenced by proximity to other NE sources.',
+    assignment: 'Assignment: Field unit observation, unrestricted Promenade access',
+    locName: 'The Drowsy Fawn — Shadowlight Promenade',
+    locDesc: 'A small, warm cafe on Shadowlight Promenade — the unofficial home court of Vinaborg\'s most dedicated Oneirium players. The kind of place where important conversations tend to happen without anyone planning them.',
+    dossier: 'Your intake profile suggests high interpersonal sensitivity and a tendency to orient around the presence and needs of others. The bureau has found that visitors of your classification adapt quickly to Vinaborg\'s social infrastructure — the field units, the tavern, the Promenade. You will be trusted before you have earned it. This is a strength and occasionally a liability. Klioldia Giftbow at the tavern will remember your name after one visit. Most people find this comforting.',
+    footnote: 'Your NE output increases measurably in group settings. The field units have been informed.',
+    share: 'Class I Relational. Assigned to The Drowsy Fawn. The field units have been informed about my NE output in group settings. helenaflinn.com/clearance'
+  },
+  receptive: {
+    slug: 'receptive',
+    title: 'NE Receptive',
+    classification: 'Vinaborg Visitor — NE Receptive · Status Pending',
+    ne: 'NE Sensitivity: Anomalous. Elevated beyond standard parameters. Unregistered.',
+    assignment: 'Assignment: Accompanied access only. Bureau intake assessment mandatory.',
+    locName: 'The Triome — Violet Expanse',
+    locDesc: 'Vast rolling plains of purple grasses and glowing orange rivers. Explorers report encountering creatures that defy easy classification — some of considerable intelligence. NE Receptive designations are frequently drawn here before they have a reason to be. The bureau has logged this without being able to explain it.',
+    dossier: 'Your intake responses fall outside the bureau\'s standard classification parameters. This is not a negative outcome — it is simply an outcome the bureau was not fully prepared for. Visitors with elevated NE sensitivity tend to experience Vinaborg differently: certain things they perceive before they happen, certain things that happen to others do not happen to them. We ask for your patience, your cooperation, and that you report any unusually vivid or recurring dreams immediately upon waking.',
+    footnote: 'Your file has been forwarded to senior bureau council. This is routine. We say that about all of them.',
+    share: 'The IBMDN flagged my NE signature as anomalous and unregistered. My file has been forwarded to senior bureau council. They say this is routine. helenaflinn.com/clearance'
+  },
+  coordinator: {
+    slug: 'coordinator',
+    title: 'The Coordinator',
+    classification: 'Vinaborg Visitor — Class II Operational',
+    ne: 'NE Sensitivity: Balanced. Structural. Reliable under pressure.',
+    assignment: 'Assignment: Cross-division access. Bureau liaison candidate.',
+    locName: 'Steamward Heights — The Office District',
+    locDesc: 'The administrative tier of Vinaborg. Where the factory\'s output meets the bureau\'s paperwork. Where decisions that affect both worlds are made in rooms with very good locks.',
+    dossier: 'Your profile indicates an unusual combination: analytical precision and strong relational intelligence in near-equal measure. Most visitors orient strongly toward one or the other — you appear to function fluently across both registers. Vinaborg\'s management tier operates on exactly this principle: the factory must run with clockwork precision, and the goblins who run it are people with feelings, opinions, and strong views about salt. You will understand both sides of that sentence without needing it explained.',
+    footnote: 'Two division heads have already submitted early access requests for your file. We have not decided whether to share it.',
+    share: 'Two division heads submitted early access requests for my bureau file. They haven\'t decided whether to share it. Class II Operational. helenaflinn.com/clearance'
+  },
+  resonant: {
+    slug: 'resonant',
+    title: 'The Resonant',
+    classification: 'Vinaborg Visitor — Class IV Provisional',
+    ne: 'NE Sensitivity: Elevated and oscillating. Resonance pattern detected across multiple frequencies.',
+    assignment: 'Assignment: Restricted access pending evaluation. Do not approach the Dreamcatcher Cube unattended.',
+    locName: 'The Triome — Violet Expanse',
+    locDesc: 'Vast rolling plains of purple grasses and glowing orange rivers. Explorers report encountering creatures that defy easy classification — some of considerable intelligence. Tranquil until it isn\'t. Resonant designations are frequently drawn to the Triome\'s wilderness rather than the city. The bureau has stopped trying to explain this.',
+    dossier: 'Your profile combines two classifications the bureau historically treats separately: the observational instincts of an Archivist and the elevated NE signature of a Resonant. Together, they produce something the bureau\'s intake system does not have a clean category for. You pick up frequencies others do not register. You notice things before they are officially there to notice. You document things the bureau would prefer remained undocumented. We are not saying this is a problem. We are saying it is something we are paying very close attention to.',
+    footnote: 'Your dossier has been cross-referenced with three existing restricted files. We cannot tell you which three.',
+    share: 'My dossier has been cross-referenced with three existing restricted files. They cannot tell me which three. Class IV Provisional. helenaflinn.com/clearance'
+  }
+};
+
+// STATE
+let currentQ = 0;
+let scores = {E:0, A:0, F:0, X:0};
+
+function startQuiz() {
+  document.getElementById('state-intro').style.display = 'none';
+  document.getElementById('state-question').style.display = 'block';
+  showQuestion(0);
+}
+
+function showQuestion(idx) {
+  currentQ = idx;
+  const q = QUESTIONS[idx];
+  document.getElementById('q-field-id').textContent = 'Field ' + String(idx+1).padStart(2,'0') + ' of 05';
+  document.getElementById('q-progress').textContent = 'Field ' + String(idx+1).padStart(2,'0') + ' — ' + q.field;
+  document.getElementById('q-text').textContent = q.prompt;
+
+  const list = document.getElementById('q-answers');
+  list.innerHTML = '';
+  // Shuffle answer order
+  const shuffled = [...q.answers].sort(() => Math.random() - 0.5);
+  shuffled.forEach(a => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.textContent = a.text;
+    btn.onclick = () => selectAnswer(a.type);
+    list.appendChild(btn);
+  });
+}
+
+function selectAnswer(type) {
+  scores[type]++;
+  if (currentQ < QUESTIONS.length - 1) {
+    showQuestion(currentQ + 1);
+  } else {
+    showProcessing();
+  }
+}
+
+function showProcessing() {
+  document.getElementById('state-question').style.display = 'none';
+  document.getElementById('state-processing').style.display = 'block';
+  setTimeout(() => showResult(), 2000);
+}
+
+function getProfile() {
+  const sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+  const top = sorted[0];
+  const second = sorted[1];
+
+  // Check ties
+  if (top[1] === second[1]) {
+    const tiedTypes = new Set([top[0], second[0]]);
+    if (tiedTypes.has('E') && tiedTypes.has('F')) return PROFILES.coordinator;
+    if (tiedTypes.has('A') && tiedTypes.has('X')) return PROFILES.resonant;
+    // Other ties: Q3 (post-dream, index 2) is tiebreaker — use top alphabetically
+  }
+
+  const map = {E:'engineer', A:'archivist', F:'operative', X:'receptive'};
+  return PROFILES[map[top[0]]];
+}
+
+function showResult() {
+  document.getElementById('state-processing').style.display = 'none';
+  document.getElementById('state-result').style.display = 'block';
+
+  const p = getProfile();
+  const ref = 'VBG-' + String(Math.floor(1000 + Math.random() * 9000));
+
+  document.getElementById('r-ref').textContent = ref;
+  document.getElementById('r-class').textContent = p.classification;
+  document.getElementById('r-title').textContent = p.title;
+  document.getElementById('r-ne').textContent = p.ne;
+  document.getElementById('r-assign').textContent = p.assignment;
+  document.getElementById('r-loc-name').textContent = p.locName;
+  document.getElementById('r-loc-desc').textContent = p.locDesc;
+  document.getElementById('r-dossier').textContent = p.dossier;
+  document.getElementById('r-footnote').textContent = p.footnote;
+
+  // Store share text
+  window._shareText = p.share;
+
+  // Expand form box for result
+  document.querySelector('.form-box').style.borderColor = 'rgba(45,212,191,0.35)';
+}
+
+function shareResult() {
+  navigator.clipboard.writeText(window._shareText).then(() => {
+    const btn = document.getElementById('share-btn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy Share Text';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+function restart() {
+  scores = {E:0, A:0, F:0, X:0};
+  currentQ = 0;
+  document.getElementById('state-result').style.display = 'none';
+  document.getElementById('state-intro').style.display = 'block';
+  document.querySelector('.form-box').style.borderColor = '';
+  document.getElementById('nl-ok').style.display = 'none';
+}
+
+// HAMBURGER
+document.getElementById('hamburger').addEventListener('click',function(){
+  this.classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('#nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+
+// PARTICLES
+const pc=document.getElementById('particles');
+const colors=['rgba(45,212,191,0.5)','rgba(134,239,172,0.35)','rgba(192,132,252,0.25)','rgba(94,234,212,0.4)'];
+for(let i=0;i<15;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  const s=Math.random()*2.5+0.8;
+  p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*2}s;`;
+  pc.appendChild(p);
+}
+</script>
+</body>
+</html>
