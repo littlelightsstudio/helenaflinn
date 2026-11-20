@@ -385,11 +385,9 @@ src="https://www.facebook.com/tr?id=988940230329622&ev=PageView&noscript=1"
         <div class="result-nl" id="nl-block">
           <div class="result-nl-head">The Nocturnal Dispatch</div>
           <div class="result-nl-body">Bureau-classified field updates, delivered on the first of every month. Exclusive Codex entries, notes from the author's desk, and updates from Vinaborg.</div>
-          <form class="nl-row" action="https://assets.mailerlite.com/jsonp/955336/forms/182296130877392293/subscribe" method="post" target="_blank" onsubmit="document.getElementById('nl-ok').style.display='block'">
+          <form class="nl-row" action="/api/subscribe" method="post" data-subscribe data-success="#nl-ok">
             <input class="nl-input" type="email" name="fields[email]" placeholder="your@email.com" required>
             <button class="nl-btn" type="submit">Join the Night Division</button>
-            <input type="hidden" name="ml-submit" value="1">
-            <input type="hidden" name="anticsrf" value="true">
           </form>
           <div class="nl-small">One dispatch per month. Unsubscribe at any time.</div>
           <div class="nl-success" id="nl-ok">Transmission confirmed. Welcome to the Night Division.</div>
@@ -941,5 +939,6 @@ for(let i=0;i<15;i++){
   pc.appendChild(p);
 }
 </script>
+<script src="/subscribe-form.js" defer></script>
 </body>
 </html>
