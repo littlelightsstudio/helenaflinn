@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the ARC Team | The Helena Flinn Chronicles</title>
+<meta name="description" content="Apply to read the final Helena Flinn book before it comes out. Advance reader copies for reviewers who love middle-grade fantasy.">
+<meta name="author" content="Michael Sokolar">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://helenaflinn.com/arc">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Helena Flinn Chronicles">
+<meta property="og:url" content="https://helenaflinn.com/arc">
+<meta property="og:title" content="Join the ARC Team for the final Helena Flinn book">
+<meta property="og:description" content="Read Book 3 before anyone else and share an honest review in launch week.">
+<meta property="og:image" content="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/books/hf1/hf1-ebook-cover.jpg">
+<meta property="og:locale" content="en_GB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void: #08060f; --deep: #110d1f; --surface: #17122a; --teal: #2dd4bf; --teal-bright: #5eead4; --teal-dim: #0f766e;
+  --purple-light: #c084fc; --gold: #d4a847;
+  --cream: #f5f0e8; --stone: #d4cfc4; --muted-text: #948daa;
+  --font-display: 'Cinzel', serif; --font-body: 'Crimson Pro', serif; --font-label: 'Josefin Sans', sans-serif;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:var(--font-body);background:var(--void);color:var(--cream);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration:none}
+a:hover{color:var(--teal-bright)}
+
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(45,212,191,0.07) 0%,transparent 60%),
+  radial-gradient(ellipse 40% 60% at 15% 80%,rgba(192,132,252,0.05) 0%,transparent 50%)}
+
+.wrap{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:2rem 1rem 4rem}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:3.5rem}
+.top a{font-family:var(--font-label);font-size:0.65rem;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-text)}
+.top a:hover{color:var(--teal)}
+
+.eyebrow{font-family:var(--font-label);font-size:0.65rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.2;letter-spacing:0.02em;margin-bottom:1.25rem}
+.lead{font-size:1.2rem;color:var(--stone);font-weight:300;margin-bottom:2.5rem}
+
+.deal{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:3rem}
+.deal div{background:rgba(255,255,255,0.025);border:1px solid rgba(45,212,191,0.12);border-radius:10px;padding:1.25rem 1.25rem 1.1rem}
+.deal h2{font-family:var(--font-label);font-size:0.62rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem}
+.deal ul{list-style:none}
+.deal li{font-size:1rem;color:var(--stone);padding-left:1rem;position:relative;margin-bottom:0.4rem}
+.deal li::before{content:'';position:absolute;left:0;top:0.65em;width:5px;height:5px;border-radius:50%;background:var(--teal-dim)}
+
+.card{background:var(--deep);border:1px solid rgba(45,212,191,0.18);border-radius:14px;padding:2rem 1.5rem}
+.card h2{font-family:var(--font-display);font-weight:600;font-size:1.3rem;margin-bottom:1.5rem}
+
+.field{margin-bottom:1.4rem}
+.field > label, .field legend{display:block;font-family:var(--font-label);font-size:0.68rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone);margin-bottom:0.55rem}
+.opt{text-transform:none;letter-spacing:0;font-family:var(--font-body);font-style:italic;color:var(--muted-text);font-size:0.9rem}
+fieldset{border:none}
+input[type=text],input[type=email],input[type=url]{width:100%;background:var(--surface);border:1px solid rgba(45,212,191,0.18);border-radius:6px;padding:0.75rem 0.9rem;font-family:var(--font-body);font-size:1.05rem;color:var(--cream);outline:none;transition:border-color var(--transition)}
+input::placeholder{color:var(--muted-text);font-style:italic}
+input:focus{border-color:var(--teal)}
+
+.choices{display:flex;flex-wrap:wrap;gap:0.5rem}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;width:1px;height:1px}
+.choice span{display:inline-block;padding:0.45rem 0.9rem;border:1px solid rgba(45,212,191,0.2);border-radius:999px;font-size:0.98rem;color:var(--stone);cursor:pointer;transition:all var(--transition);user-select:none}
+.choice input:checked + span{background:rgba(45,212,191,0.14);border-color:var(--teal);color:var(--cream)}
+.choice input:focus-visible + span{outline:2px solid var(--teal);outline-offset:2px}
+
+.pledge{display:flex;gap:0.7rem;align-items:flex-start;cursor:pointer;font-size:1.05rem;color:var(--cream);margin:1.8rem 0 1.2rem}
+.pledge input{margin-top:0.35rem;width:1.05rem;height:1.05rem;accent-color:var(--teal);flex-shrink:0}
+
+.fine{font-size:0.9rem;color:var(--muted-text);font-style:italic;margin-bottom:1.5rem}
+.btn{display:inline-block;font-family:var(--font-label);font-size:0.68rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;padding:0.95rem 2rem;background:var(--teal);color:var(--void);border:none;border-radius:6px;cursor:pointer;transition:all var(--transition)}
+.btn:hover{background:var(--teal-bright);transform:translateY(-1px);box-shadow:0 6px 20px rgba(45,212,191,0.25)}
+.btn:disabled{opacity:0.6;cursor:wait;transform:none;box-shadow:none}
+
+.success{display:none}
+.success h2{color:var(--teal)}
+.success p{font-size:1.1rem;color:var(--stone);margin-bottom:1rem}
+.success .bf{display:inline-block;margin:0.25rem 0 1.25rem}
+
+footer{margin-top:3.5rem;text-align:center;font-family:var(--font-label);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted-text)}
+footer a{color:var(--muted-text);margin:0 0.6rem}
+footer a:hover{color:var(--teal)}
+
+@media (max-width:540px){
+  .deal{grid-template-columns:1fr}
+  .card{padding:1.6rem 1.1rem}
+  .btn{width:100%;text-align:center}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z90VYGK9MP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z90VYGK9MP', { anonymize_ip: true });
+</script>
+<!-- Umami Analytics (cookieless, self-hosted) -->
+<script async defer src="https://analytics.littlelights.studio/script.js" data-website-id="70f0e6f5-a651-4be1-962f-99bbe2065166"></script>
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<div class="wrap">
+  <nav class="top">
+    <a href="/">The Helena Flinn Chronicles</a>
+    <a href="/faq">FAQ</a>
+  </nav>
+
+  <p class="eyebrow">Advance reader copies · Book 3</p>
+  <h1>Read the final book before anyone else</h1>
+  <p class="lead">The third and last Helena Flinn book is nearly ready. Before it reaches the shops, I'm putting together a small team of advance readers: people who love middle-grade fantasy and will tell others what they honestly think of it.</p>
+
+  <div class="deal">
+    <div>
+      <h2>What you get</h2>
+      <ul>
+        <li>Book 3 as an eBook, before it is released</li>
+        <li>Books 1 and 2 for free, to catch up or reread</li>
+      </ul>
+    </div>
+    <div>
+      <h2>What I ask</h2>
+      <ul>
+        <li>An honest review in launch week</li>
+        <li>Wherever you usually review. Glowing, mixed or critical, every honest review helps.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div id="arc-form-wrap">
+      <h2>Apply for the ARC team</h2>
+      <form id="arc-form" action="/api/arc" method="post" data-subscribe data-endpoint="arc" data-hide="#arc-form-wrap" data-success="#arc-ok" novalidate>
+        <div class="field">
+          <label for="arc-name">Your name</label>
+          <input id="arc-name" type="text" name="name" autocomplete="name" maxlength="100" required>
+        </div>
+        <div class="field">
+          <label for="arc-email">Your email</label>
+          <input id="arc-email" type="email" name="fields[email]" autocomplete="email" placeholder="your@email.com" required>
+        </div>
+        <fieldset class="field">
+          <legend>Where do you review? <span class="opt">Tick all that apply.</span></legend>
+          <div class="choices">
+            <label class="choice"><input type="checkbox" name="platforms" value="Amazon"><span>Amazon</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="Goodreads"><span>Goodreads</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="Instagram"><span>Instagram</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="TikTok"><span>TikTok</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="Blog"><span>Blog</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="Other"><span>Other</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="arc-link">Link to your reviewer profile <span class="opt">Optional.</span></label>
+          <input id="arc-link" type="text" inputmode="url" name="profile_link" maxlength="300" placeholder="goodreads.com/your-profile">
+        </div>
+        <fieldset class="field">
+          <legend>Have you read Books 1 and 2?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="read_books" value="Both" required><span>Both</span></label>
+            <label class="choice"><input type="radio" name="read_books" value="Book 1 only"><span>Book 1 only</span></label>
+            <label class="choice"><input type="radio" name="read_books" value="Not yet"><span>Not yet</span></label>
+          </div>
+        </fieldset>
+
+        <label class="pledge"><input type="checkbox" name="pledge" value="yes" required> <span>I'll post an honest review in launch week.</span></label>
+
+        <p class="fine">ARC readers also get my author newsletter, so you hear when the copies are ready. I'll send a confirmation email first. You can unsubscribe at any time. Details in the <a href="/privacy">privacy policy</a>.</p>
+
+        <button class="btn" type="submit">Send my application</button>
+      </form>
+    </div>
+
+    <div class="success" id="arc-ok" role="status">
+      <h2>Thank you, your application is in</h2>
+      <p>One small step first: please check your inbox and confirm your email address.</p>
+      <p>As an ARC reader you get Books 1 and 2 for free:</p>
+      <a class="btn bf" href="BOOKFUNNEL_LINK" target="_blank" rel="noopener">Get Books 1 and 2</a>
+      <p>The advance copy of Book 3 follows once the line edit is done. I'll write to you as soon as it's ready.</p>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">Home</a> <a href="/imprint">Imprint</a> <a href="/privacy">Privacy</a>
+  </footer>
+</div>
+
+<script>
+// Pflichtfelder prüfen, bevor subscribe-form.js abschickt (Fehlerzeile statt Browser-Blasen)
+(function () {
+  var form = document.getElementById('arc-form')
+  form.addEventListener('submit', function (e) {
+    var msg = null
+    if (!form.querySelector('#arc-name').value.trim()) msg = 'Please enter your name.'
+    else if (!form.querySelector('#arc-email').checkValidity()) msg = 'Please enter a valid email address.'
+    else if (!form.querySelector('input[name=platforms]:checked')) msg = 'Please tick at least one place where you review.'
+    else if (!form.querySelector('input[name=read_books]:checked')) msg = 'Please tell me whether you have read Books 1 and 2.'
+    else if (!form.querySelector('input[name=pledge]').checked) msg = 'Please confirm that you will post an honest review in launch week.'
+    if (msg) {
+      e.preventDefault()
+      e.stopImmediatePropagation()
+      if (form._err) { form._err.textContent = msg; form._err.style.display = 'block' }
+    }
+  })
+})()
+</script>
+<script src="/subscribe-form.js"></script>
+</body>
+</html>

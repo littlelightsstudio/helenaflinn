@@ -23,7 +23,7 @@ app.use(compression())
 // Health-Check für Coolify
 app.get('/health', (_req, res) => res.json({ ok: true }))
 
-// API: Newsletter-Anmeldung (Turnstile + MailerLite), siehe lib/subscribe.js
+// API: Newsletter und ARC-Bewerbung (Turnstile + MailerLite), siehe lib/subscribe.js
 app.use('/api', subscribeRouter())
 
 // Server-Code und Paketdateien nicht als statische Dateien ausliefern

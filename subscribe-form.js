@@ -2,7 +2,8 @@
  * Newsletter-Formulare → POST /api/subscribe (helenaflinn.com)
  * Wird auch von michaelsokolar.com eingebunden.
  *
- * Markup: <form data-subscribe data-success="#id" data-hide="#id"> mit einem
+ * Markup: <form data-subscribe data-success="#id" data-hide="#id"
+ * [data-endpoint="arc"]> mit einem
  * <input type="email"> und einem Submit-Button. Honeypot und Turnstile-
  * Container fügt dieses Skript selbst ein.
  */
@@ -97,17 +98,24 @@
     btn.textContent = 'Sending…'
     function restore() { btn.disabled = false; btn.textContent = label }
 
+    var endpoint = form.getAttribute('data-endpoint') || 'subscribe'
     getToken(form)
       .then(function (token) {
-        return fetch(API, {
+        // Alle benannten Felder mitschicken (Checkbox-Gruppen als Liste)
+        var payload = {}
+        new FormData(form).forEach(function (v, k) {
+          if (k === 'fields[email]') return
+          if (form.querySelectorAll('[name="' + k + '"][type="checkbox"]').length > 1) {
+            ;(payload[k] = payload[k] || []).push(v)
+          } else payload[k] = v
+        })
+        payload.email = input.value
+        payload.elapsed = Date.now() - loadedAt
+        payload.token = token
+        return fetch(API.replace(/subscribe$/, endpoint), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: input.value,
-            website: form.querySelector('input[name="website"]').value,
-            elapsed: Date.now() - loadedAt,
-            token: token,
-          }),
+          body: JSON.stringify(payload),
         })
       })
       .then(function (res) { return res.json().catch(function () { return { ok: false } }) })
@@ -119,7 +127,7 @@
           ;(hide ? document.querySelector(hide) : form).style.display = 'none'
           if (show) document.querySelector(show).style.display = 'block'
           form._tsBox.style.display = 'none'
-          if (window.umami) window.umami.track('newsletter-signup')
+          if (window.umami) window.umami.track(endpoint === 'arc' ? 'arc-application' : 'newsletter-signup')
         } else {
           restore()
           showError(form, (data && data.error) || MSG_RETRY)
