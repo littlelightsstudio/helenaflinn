@@ -386,6 +386,7 @@ src="https://www.facebook.com/tr?id=988940230329622&ev=PageView&noscript=1"
           <div class="result-nl-head">The Author Newsletter</div>
           <div class="result-nl-body">Michael Sokolar's author newsletter. A letter from my desk: how the books get made, what I'm reading, news on Helena Flinn and what comes next.</div>
           <form class="nl-row" action="/api/subscribe" method="post" data-subscribe data-success="#nl-ok">
+            <input type="hidden" name="source" value="quiz">
             <input class="nl-input" type="email" name="fields[email]" placeholder="your@email.com" required>
             <button class="nl-btn" type="submit">Subscribe</button>
           </form>

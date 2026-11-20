@@ -137,6 +137,7 @@ footer a:hover{color:var(--teal)}
     <div id="arc-form-wrap">
       <h2>Apply for the ARC team</h2>
       <form id="arc-form" action="/api/arc" method="post" data-subscribe data-endpoint="arc" data-hide="#arc-form-wrap" data-success="#arc-ok" novalidate>
+        <input type="hidden" name="source" value="arc">
         <div class="field">
           <label for="arc-name">Your name</label>
           <input id="arc-name" type="text" name="name" autocomplete="name" maxlength="100" required>
