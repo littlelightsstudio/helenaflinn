@@ -10,6 +10,7 @@ import compression from 'compression'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { subscribeRouter } from './lib/subscribe.js'
+import { metaConfig } from './lib/meta.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const PORT = Number(process.env.PORT) || 3000
@@ -24,6 +25,8 @@ app.use(compression())
 app.get('/health', (_req, res) => res.json({ ok: true }))
 
 // API: Newsletter und ARC-Bewerbung (Turnstile + MailerLite), siehe lib/subscribe.js
+// Pixel-ID für tracking.js (Coolify-Variable META_PIXEL_ID), siehe lib/meta.js
+app.get('/api/config', metaConfig)
 app.use('/api', subscribeRouter())
 
 // Server-Code und Paketdateien nicht als statische Dateien ausliefern

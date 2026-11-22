@@ -400,23 +400,8 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
   gtag('js', new Date());
   gtag('config', 'G-Z90VYGK9MP', { anonymize_ip: true });
 </script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '988940230329622');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=988940230329622&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<!-- Einwilligung + Meta Pixel (lädt erst nach Zustimmung), UTM -->
+<script src="/tracking.js" defer></script>
 
 <!-- Launch Gate (controls feature reveal at unlock dates) -->
 <script src="launch-gate.js"></script>
@@ -1622,22 +1607,6 @@ if(hfForm) {
 }
 </script>
 <script src="/subscribe-form.js" defer></script>
-<!-- COOKIE NOTICE -->
-<div id="cookie-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(8,8,16,0.97);border-top:1px solid rgba(45,212,191,0.15);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;backdrop-filter:blur(8px)">
-  <p style="margin:0;font-family:'Josefin Sans',sans-serif;font-size:0.65rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.45);line-height:1.7;max-width:780px">This site uses Google Analytics 4 to collect anonymous usage statistics. No personal data is stored. <a href="/privacy.html" style="color:rgba(45,212,191,0.7);text-decoration:none;border-bottom:1px solid rgba(45,212,191,0.25)">Privacy policy</a></p>
-  <button onclick="dismissCookieBar()" style="flex-shrink:0;font-family:'Josefin Sans',sans-serif;font-size:0.58rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(45,212,191,0.6);background:transparent;border:1px solid rgba(45,212,191,0.2);padding:0.5rem 1.1rem;cursor:pointer;transition:all 0.2s;white-space:nowrap" onmouseover="this.style.color='#2dd4bf';this.style.borderColor='rgba(45,212,191,0.5)'" onmouseout="this.style.color='rgba(45,212,191,0.6)';this.style.borderColor='rgba(45,212,191,0.2)'">Got it</button>
-</div>
-<script>
-(function(){
-  if(!localStorage.getItem('hf_cookie_ok')){
-    document.getElementById('cookie-bar').style.display='flex';
-  }
-})();
-function dismissCookieBar(){
-  localStorage.setItem('hf_cookie_ok','1');
-  document.getElementById('cookie-bar').style.display='none';
-}
-</script>
 <a href="#home" class="back-top" id="back-top" aria-label="Back to top">&#8593;</a>
 <script>
 window.addEventListener('scroll',function(){

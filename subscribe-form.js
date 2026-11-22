@@ -99,6 +99,8 @@
     function restore() { btn.disabled = false; btn.textContent = label }
 
     var endpoint = form.getAttribute('data-endpoint') || 'subscribe'
+    // Gleiche ID für Browser-Pixel und Conversions API (Meta zählt den Lead nur einmal)
+    var eventId = 'lead-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10)
     getToken(form)
       .then(function (token) {
         // Alle benannten Felder mitschicken (Checkbox-Gruppen als Liste)
@@ -112,6 +114,13 @@
         payload.email = input.value
         payload.elapsed = Date.now() - loadedAt
         payload.token = token
+        // UTM und Meta kommen aus tracking.js (nur auf helenaflinn.com eingebunden)
+        if (typeof window.hfUtm === 'function' && window.hfUtm()) payload.utm = window.hfUtm()
+        if (endpoint === 'arc' && typeof window.hfMeta === 'function') {
+          var m = window.hfMeta()
+          if (m.consent) { m.event_id = eventId; m.url = location.href.split('#')[0] }
+          payload.meta = m
+        }
         return fetch(API.replace(/subscribe$/, endpoint), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -128,6 +137,8 @@
           if (show) document.querySelector(show).style.display = 'block'
           form._tsBox.style.display = 'none'
           if (window.umami) window.umami.track(endpoint === 'arc' ? 'arc-application' : 'newsletter-signup')
+          // Meta Lead erst nach erfolgreicher Server-Antwort, nur für die ARC-Bewerbung
+          if (endpoint === 'arc' && typeof window.hfLead === 'function') window.hfLead(eventId, { content_name: 'ARC Book 3' })
         } else {
           restore()
           showError(form, (data && data.error) || MSG_RETRY)
