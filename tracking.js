@@ -4,8 +4,9 @@
  *
  * - Pixel-ID kommt vom Server (/api/config, Coolify-Variable META_PIXEL_ID).
  *   Ohne Pixel-ID: kein Banner, kein Pixel.
- * - Der Pixel lädt erst nach "Accept" (Kategorie Marketing). Entscheidung in
- *   localStorage "hf_consent" = "marketing" | "declined".
+ * - Der Pixel lädt erst nach "Accept" (Marketing). Entscheidung in
+ *   localStorage "hf_consent" = "accepted" | "declined".
+ *   Statistik läuft über Umami (ohne Cookies, braucht keine Einwilligung).
  * - PageView auf jeder Seite, Lead nur über window.hfLead() nach erfolgreicher
  *   Server-Antwort (subscribe-form.js, ARC-Formular).
  * - UTM-Parameter der Einstiegsseite bleiben für die Sitzung erhalten
@@ -33,9 +34,10 @@
     try { return JSON.parse(sessionStorage.getItem('hf_utm') || 'null') } catch (e) { return null }
   }
 
-  // ── Meta Pixel ──
   var pixelId = null
-  function marketingOk() { return lsGet(KEY) === 'marketing' }
+  function marketingOk() { return lsGet(KEY) === 'accepted' }
+
+  // ── Meta Pixel ──
 
   function loadPixel() {
     if (!pixelId || window.fbq) return
@@ -54,7 +56,7 @@
     var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'))
     return m ? decodeURIComponent(m[1]) : null
   }
-  function dropMetaCookies() {
+  function dropCookies() {
     ;['_fbp', '_fbc'].forEach(function (n) {
       var base = n + '=; Max-Age=0; path=/'
       document.cookie = base
@@ -78,8 +80,8 @@
     var before = lsGet(KEY)
     lsSet(KEY, v)
     if (bar) bar.style.display = 'none'
-    if (v === 'marketing') loadPixel()
-    else if (before === 'marketing') { dropMetaCookies(); location.reload() } // Pixel ist geladen, nur Neuladen entfernt ihn
+    if (v === 'accepted') loadPixel()
+    else if (before === 'accepted') { dropCookies(); location.reload() } // Pixel ist geladen, nur Neuladen entfernt ihn
   }
 
   function buildBar() {
@@ -104,16 +106,18 @@
     bar.setAttribute('aria-label', 'Cookie settings')
     bar.innerHTML =
       '<div class="in"><p>May I use the Meta Pixel? It shows me whether my ads on Instagram and Facebook work. ' +
-      'It sets cookies and sends information about your visit to Meta. You can change your mind at any time. ' +
-      '<a href="/privacy#meta-pixel">Privacy policy</a></p>' +
+      'It sets cookies and sends information about your visit to Meta. Decline and the site works just the same. ' +
+      'You can change your mind at any time. ' +
+      '<a href="/privacy#cookies">Privacy policy</a></p>' +
       '<div class="btns"><button type="button" class="no">Decline</button><button type="button" class="yes">Accept</button></div></div>'
     bar.querySelector('.no').addEventListener('click', function () { decide('declined') })
-    bar.querySelector('.yes').addEventListener('click', function () { decide('marketing') })
+    bar.querySelector('.yes').addEventListener('click', function () { decide('accepted') })
     document.body.appendChild(bar)
   }
 
   function showBar() {
     if (!pixelId) return
+    if (!document.body) return document.addEventListener('DOMContentLoaded', showBar)
     if (!bar) buildBar()
     bar.style.display = 'block'
   }
@@ -126,8 +130,8 @@
       pixelId = c && /^\d{5,20}$/.test(c.metaPixelId || '') ? c.metaPixelId : null
       if (!pixelId) return
       var choice = lsGet(KEY)
-      if (choice === 'marketing') loadPixel()
-      else if (!choice) showBar()
+      if (choice === 'accepted') loadPixel()
+      else if (choice !== 'declined') showBar()
     })
     .catch(function () {})
 })()

@@ -33,14 +33,6 @@ footer{background:var(--void);border-top:1px solid var(--rule);padding:2rem 6vw;
 <!-- Einwilligung + Meta Pixel (lädt erst nach Zustimmung), UTM -->
 <script src="/tracking.js" defer></script>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z90VYGK9MP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z90VYGK9MP', { anonymize_ip: true });
-</script>
 
 <!-- Umami Analytics (cookieless, self-hosted) -->
 <script async defer src="https://analytics.littlelights.studio/script.js" data-website-id="70f0e6f5-a651-4be1-962f-99bbe2065166"></script>
@@ -75,7 +67,7 @@ footer{background:var(--void);border-top:1px solid var(--rule);padding:2rem 6vw;
   </ul>
 
   <h2>3. Weitergabe an Dritte</h2>
-  <p>Daten werden an Web3Forms, MailerLite und Cloudflare weitergegeben, soweit zur Leistungserbringung erforderlich, und nur mit Ihrer Einwilligung an Meta (siehe Abschnitt 8). Eine darüber hinausgehende Weitergabe erfolgt nicht.</p>
+  <p>Daten werden an Web3Forms, MailerLite und Cloudflare weitergegeben, soweit zur Leistungserbringung erforderlich, und nur mit Ihrer Einwilligung an Meta (Abschnitt 7). Eine darüber hinausgehende Weitergabe erfolgt nicht.</p>
   <ul>
     <li>Web3Forms: <a href="https://web3forms.com/privacy" target="_blank">web3forms.com/privacy</a></li>
     <li>MailerLite: <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">mailerlite.com/legal/privacy-policy</a></li>
@@ -89,19 +81,17 @@ footer{background:var(--void);border-top:1px solid var(--rule);padding:2rem 6vw;
   <h2>5. Ihre Rechte</h2>
   <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch. Kontakt: <a href="mailto:miso@michaelsokolar.com">miso@michaelsokolar.com</a>. Beschwerderecht bei der österreichischen Datenschutzbehörde: <a href="https://www.dsb.gv.at" target="_blank">dsb.gv.at</a>.</p>
 
-  <h2>6. Cookies und Tracking</h2>
-  <p>Werbe-Cookies und Werbe-Tracking (Meta Pixel) setzen wir nur ein, wenn Sie im Cookie-Banner zustimmen (siehe Abschnitt 8). Ihre Entscheidung speichern wir in Ihrem Browser (localStorage). Für Nutzungsstatistiken wird Google Analytics 4 eingesetzt (siehe Abschnitt 7), dazu Umami, das ohne Cookies arbeitet.</p>
+  <h2 id="cookies">6. Cookies und Tracking</h2>
+  <p>Den Meta Pixel (Marketing, Abschnitt 7) laden wir nur, wenn Sie im Cookie-Banner zustimmen. Ablehnen ist genauso einfach wie Zustimmen, die Website funktioniert dann ohne Einschränkung. Ihre Entscheidung speichern wir in Ihrem Browser (localStorage). Für Nutzungsstatistiken verwenden wir Umami, selbst gehostet bei uns, ohne Cookies und ohne Weitergabe an Dritte (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse an einer einfachen Reichweitenmessung).</p>
   <p><button type="button" class="consent-btn" onclick="window.hfConsent&&window.hfConsent.open()">Cookie-Einstellungen ändern</button></p>
 
-  <h2>7. Google Analytics</h2>
-  <p>Diese Website verwendet Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Google Analytics erfasst anonymisierte Nutzungsdaten wie besuchte Seiten, Sitzungsdauer und allgemeine geografische Herkunft (Land/Region). IP-Adressen werden anonymisiert und nicht vollständig gespeichert. Es werden keine personenbezogenen Daten übermittelt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Analyse der Website-Nutzung zur Verbesserung des Angebots). Sie können der Datenerhebung widersprechen über: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">tools.google.com/dlpage/gaoptout</a>. Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
 
-  <h2 id="meta-pixel">8. Meta Pixel und Conversions API</h2>
+  <h2 id="meta-pixel">7. Meta Pixel und Conversions API</h2>
   <p>Mit Ihrer Einwilligung verwenden wir den Meta Pixel von Meta Platforms Ireland Ltd. (Merrion Road, Dublin 4, D04 X2K5, Irland). Zweck: messen, ob unsere Anzeigen auf Instagram und Facebook wirken, und sie an Personen ausspielen, die sich dafür interessieren könnten. Ohne Ihre Zustimmung wird der Pixel nicht geladen.</p>
   <ul>
     <li><strong>Was erfasst wird:</strong> aufgerufene Seiten, Zeitpunkt, IP-Adresse, Browser- und Geräteinformationen, eine Kennung in den Cookies <code>_fbp</code> und <code>_fbc</code> (Speicherdauer bis zu 90 Tage) sowie das Ereignis „Lead“, wenn Sie die ARC-Bewerbung erfolgreich absenden.</li>
     <li><strong>Conversions API:</strong> Haben Sie zugestimmt, meldet zusätzlich unser Server das Ereignis „Lead“ direkt an Meta. Dabei werden Ihre E-Mail-Adresse nur als nicht umkehrbarer Hashwert (SHA-256), IP-Adresse, Browserkennung, die Pixel-Cookies und eine Ereignis-ID übermittelt. Die Ereignis-ID sorgt dafür, dass Meta die Bewerbung nur einmal zählt.</li>
-    <li><strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 165 Abs. 3 TKG 2021). Sie können sie jederzeit über „Cookie-Einstellungen ändern“ in Abschnitt 6 widerrufen; die Pixel-Cookies werden dann gelöscht.</li>
+    <li><strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 165 Abs. 3 TKG 2021). Sie können sie jederzeit über „Cookie-Einstellungen ändern“ in Abschnitt 6 widerrufen; die Cookies von Meta werden dann gelöscht.</li>
     <li><strong>Gemeinsame Verantwortung:</strong> Für die Erhebung und Übermittlung der Daten an Meta sind wir gemeinsam mit Meta verantwortlich (Art. 26 DSGVO, <a href="https://www.facebook.com/legal/controller_addendum" target="_blank">Vereinbarung</a>). Die weitere Verarbeitung verantwortet Meta allein.</li>
     <li><strong>Übermittlung in die USA:</strong> Meta Platforms, Inc. ist unter dem EU-US Data Privacy Framework zertifiziert.</li>
   </ul>
@@ -128,7 +118,7 @@ footer{background:var(--void);border-top:1px solid var(--rule);padding:2rem 6vw;
   </ul>
 
   <h2>3. Third Parties</h2>
-  <p>Data is shared with Web3Forms, MailerLite and Cloudflare to the extent necessary to provide the service, and with Meta only if you consent (see section 8). No data is sold or shared for any other purpose.</p>
+  <p>Data is shared with Web3Forms, MailerLite and Cloudflare to the extent necessary to provide the service, and with Meta (section 7) only if you consent. No data is sold or shared for any other purpose.</p>
   <ul>
     <li>Web3Forms: <a href="https://web3forms.com/privacy" target="_blank">web3forms.com/privacy</a></li>
     <li>MailerLite: <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">mailerlite.com/legal/privacy-policy</a></li>
@@ -142,19 +132,17 @@ footer{background:var(--void);border-top:1px solid var(--rule);padding:2rem 6vw;
   <h2>5. Your Rights</h2>
   <p>Under GDPR, you have the right to access, rectify, erase, restrict processing of, and port your data, as well as the right to object. Contact: <a href="mailto:miso@michaelsokolar.com">miso@michaelsokolar.com</a>. You may also lodge a complaint with the Austrian Data Protection Authority: <a href="https://www.dsb.gv.at" target="_blank">dsb.gv.at</a>.</p>
 
-  <h2>6. Cookies and Tracking</h2>
-  <p>We only use advertising cookies and ad tracking (Meta Pixel) if you agree in the cookie banner (see section 8). Your choice is stored in your browser (localStorage). For usage statistics we use Google Analytics 4 (see section 7) and Umami, which works without cookies.</p>
+  <h2 id="cookies-en">6. Cookies and Tracking</h2>
+  <p>We only load the Meta Pixel (marketing, section 7) if you agree in the cookie banner. Declining is as easy as agreeing, and the site works just the same. Your choice is stored in your browser (localStorage). For usage statistics we use Umami, self-hosted by us, without cookies and without sharing data with third parties (legal basis: Art. 6(1)(f) GDPR, legitimate interest in simple audience measurement).</p>
   <p><button type="button" class="consent-btn" onclick="window.hfConsent&&window.hfConsent.open()">Change cookie settings</button></p>
 
-  <h2>7. Google Analytics</h2>
-  <p>This website uses Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) to collect anonymous usage statistics. Data collected includes pages visited, session duration, and general geographic location (country/region). IP addresses are anonymised before storage. No personal data is transmitted. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in understanding website usage to improve the service). You may opt out at any time via Google's opt-out browser add-on: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">tools.google.com/dlpage/gaoptout</a>. Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
 
-  <h2 id="meta-pixel-en">8. Meta Pixel and Conversions API</h2>
+  <h2 id="meta-pixel-en">7. Meta Pixel and Conversions API</h2>
   <p>With your consent we use the Meta Pixel from Meta Platforms Ireland Ltd. (Merrion Road, Dublin 4, D04 X2K5, Ireland). Purpose: measuring whether our ads on Instagram and Facebook work, and showing them to people who may be interested. Without your consent the pixel is not loaded.</p>
   <ul>
     <li><strong>What is collected:</strong> pages visited, time, IP address, browser and device information, an identifier in the cookies <code>_fbp</code> and <code>_fbc</code> (stored for up to 90 days), and the “Lead” event when you successfully submit the ARC application.</li>
     <li><strong>Conversions API:</strong> If you consented, our server also reports the “Lead” event directly to Meta. It sends your email address only as an irreversible hash (SHA-256), your IP address, browser identifier, the pixel cookies and an event ID. The event ID makes sure Meta counts the application only once.</li>
-    <li><strong>Legal basis:</strong> your consent (Art. 6(1)(a) GDPR, § 165(3) Austrian TKG 2021). You can withdraw it at any time via “Change cookie settings” in section 6; the pixel cookies are then deleted.</li>
+    <li><strong>Legal basis:</strong> your consent (Art. 6(1)(a) GDPR, § 165(3) Austrian TKG 2021). You can withdraw it at any time via “Change cookie settings” in section 6; the Meta cookies are then deleted.</li>
     <li><strong>Joint controllership:</strong> we and Meta are joint controllers for collecting and transmitting the data to Meta (Art. 26 GDPR, <a href="https://www.facebook.com/legal/controller_addendum" target="_blank">addendum</a>). Meta alone is responsible for any further processing.</li>
     <li><strong>Transfer to the USA:</strong> Meta Platforms, Inc. is certified under the EU-US Data Privacy Framework.</li>
   </ul>
