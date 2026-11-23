@@ -14,14 +14,14 @@
 <meta property="og:url" content="https://helenaflinn.com/">
 <meta property="og:title" content="The Helena Flinn Chronicles — Middle-Grade Fantasy by Michael Sokolar">
 <meta property="og:description" content="A middle-grade fantasy trilogy set beneath Vienna, where goblins engineer dreams and one girl holds the key between worlds.">
-<meta property="og:image" content="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/books/hf1/hf1-ebook-cover.jpg">
+<meta property="og:image" content="/images/books/hf1/hf1-ebook-cover.jpg">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="2560">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Helena Flinn Chronicles">
 <meta name="twitter:description" content="A middle-grade fantasy trilogy set beneath Vienna, where goblins engineer dreams and one girl holds the key between worlds.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/books/hf1/hf1-ebook-cover.jpg">
+<meta name="twitter:image" content="/images/books/hf1/hf1-ebook-cover.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,7 +50,7 @@
       "position": 1,
       "isbn": "978-3-9505606-0-2",
       "url": "https://mybook.to/helena-flinn-SotN",
-      "image": "https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/books/hf1/hf1-ebook-cover.jpg",
+      "image": "https://helenaflinn.com/images/books/hf1/hf1-ebook-cover.jpg",
       "inLanguage": "en",
       "audience": {"@type": "Audience", "audienceType": "Children", "suggestedMinAge": 8, "suggestedMaxAge": 12}
     },
@@ -60,7 +60,7 @@
       "position": 2,
       "isbn": "978-3-9505606-1-9",
       "url": "https://mybook.to/helena-flinn-tfr",
-      "image": "https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/books/hf2/hf2-ebook-cover.jpg",
+      "image": "https://helenaflinn.com/images/books/hf2/hf2-ebook-cover.jpg",
       "inLanguage": "en",
       "audience": {"@type": "Audience", "audienceType": "Children", "suggestedMinAge": 8, "suggestedMaxAge": 12}
     }
@@ -68,7 +68,7 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 :root {
   --void: #08060f;
@@ -91,7 +91,7 @@
   --text-body: #2e2840;
   --text-light: #6b6483;
   --font-display: 'Cinzel', serif;
-  --font-body: 'Crimson Pro', serif;
+  --font-body: 'Literata', serif;
   --font-label: 'Josefin Sans', sans-serif;
   --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
 }
@@ -108,7 +108,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 5vw;display:f
 nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,191,0.08)}
 .nav-logo{font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.25em;color:var(--teal);text-decoration:none;text-transform:uppercase}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-family:var(--font-label);font-size:0.65rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color var(--transition);position:relative}
+.nav-links a{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color var(--transition);position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform var(--transition)}
 .nav-links a:hover{color:var(--teal-bright)}
 .nav-links a:hover::after{transform:scaleX(1)}
@@ -123,21 +123,21 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(45,212,191,0.06) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 20% 80%,rgba(192,132,252,0.08) 0%,transparent 50%),radial-gradient(ellipse 50% 60% at 80% 70%,rgba(134,239,172,0.05) 0%,transparent 50%),linear-gradient(180deg,var(--void) 0%,#0f0b1e 50%,var(--deep) 100%)}
 .particle{position:absolute;border-radius:50%;pointer-events:none;animation:floatUp linear infinite}
 @keyframes floatUp{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:0.5}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
-.hero-eyebrow{font-family:var(--font-label);font-size:0.65rem;font-weight:300;letter-spacing:0.4em;text-transform:uppercase;color:var(--teal);margin-bottom:2.5rem;position:relative;z-index:1;animation:fadeUp 1s ease both}
+.hero-eyebrow{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--teal);margin-bottom:2.5rem;position:relative;z-index:1;animation:fadeUp 1s ease both}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'——';margin:0 1rem;opacity:0.4}
 .hero-title{font-family:var(--font-display);font-size:clamp(2.8rem,7vw,6.5rem);font-weight:400;line-height:1.0;text-align:center;letter-spacing:0.04em;position:relative;z-index:1;animation:fadeUp 1s 0.15s ease both}
 .hero-title .line-1{color:var(--cream);display:block}
 .hero-title .line-2{display:block;background:linear-gradient(135deg,var(--teal-bright) 0%,var(--green) 40%,var(--teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-subtitle{font-size:clamp(1rem,2vw,1.2rem);font-weight:400;font-style:italic;color:var(--stone);text-align:center;max-width:560px;line-height:1.7;margin-top:2rem;position:relative;z-index:1;animation:fadeUp 1s 0.3s ease both}
-.hero-tagline{font-family:var(--font-label);font-size:0.65rem;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted-text);text-align:center;margin-top:1.25rem;position:relative;z-index:1;animation:fadeUp 1s 0.45s ease both}
+.hero-tagline{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted-text);text-align:center;margin-top:1.25rem;position:relative;z-index:1;animation:fadeUp 1s 0.45s ease both}
 .hero-cta{display:flex;gap:1.5rem;margin-top:3.5rem;position:relative;z-index:1;animation:fadeUp 1s 0.6s ease both;flex-wrap:wrap;justify-content:center}
 .btn-primary{font-family:var(--font-label);font-size:0.68rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--void);background:var(--teal);border:none;padding:1rem 2.5rem;cursor:pointer;text-decoration:none;transition:all var(--transition);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
 .btn-primary:hover{background:var(--teal-bright);transform:translateY(-2px);box-shadow:0 8px 30px rgba(45,212,191,0.3)}
-.btn-ghost{font-family:var(--font-label);font-size:0.68rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);background:transparent;border:1px solid rgba(45,212,191,0.3);padding:1rem 2.5rem;cursor:pointer;text-decoration:none;transition:all var(--transition)}
+.btn-ghost{font-family:var(--font-label);font-size:0.68rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);background:transparent;border:1px solid rgba(45,212,191,0.3);padding:1rem 2.5rem;cursor:pointer;text-decoration:none;transition:all var(--transition)}
 .btn-ghost:hover{border-color:var(--teal);background:rgba(45,212,191,0.05);transform:translateY(-2px)}
 .ornament{width:100%;max-width:400px;margin:3rem auto 0;position:relative;z-index:1;animation:fadeUp 1s 0.75s ease both;text-align:center}
 .ornament svg{width:100%;opacity:0.4}
-.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-family:var(--font-label);font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted-text);display:flex;flex-direction:column;align-items:center;gap:0.75rem;z-index:1;animation:fadeIn 1s 1.5s ease both}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-family:var(--font-label);font-size:0.66rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted-text);display:flex;flex-direction:column;align-items:center;gap:0.75rem;z-index:1;animation:fadeIn 1s 1.5s ease both}
 .scroll-hint::after{content:'';width:1px;height:40px;background:linear-gradient(to bottom,var(--teal-dim),transparent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
@@ -149,7 +149,7 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 #world-intro::before{top:0}
 #world-intro::after{bottom:0}
 .world-intro-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start}
-.world-intro-label{font-family:var(--font-label);font-size:0.65rem;font-weight:300;letter-spacing:0.35em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem}
+.world-intro-label{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.35em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem}
 .world-intro-heading{font-family:var(--font-display);font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:400;line-height:1.25;color:var(--cream)}
 .world-intro-heading span{color:var(--teal-bright)}
 .world-intro-body{font-size:1.1rem;line-height:1.85;color:var(--stone);font-weight:400}
@@ -157,15 +157,15 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .world-intro-body strong{color:var(--cream);font-weight:600}
 .world-facts{margin-top:3rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .fact-item{border-left:2px solid var(--teal-dim);padding-left:1.25rem}
-.fact-label{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
-.fact-value{font-size:0.92rem;color:var(--stone);line-height:1.5}
+.fact-label{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
+.fact-value{font-size:1rem;color:var(--stone);line-height:1.5}
 
 /* BOOKS */
 #books{background:#1c1214;padding:8rem 5vw;position:relative}
 #books::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(200,100,90,0.09) 0%,transparent 55%),radial-gradient(ellipse 50% 50% at 80% 80%,rgba(45,212,191,0.03) 0%,transparent 50%);pointer-events:none}
 #books::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,100,90,0.25),transparent)}
 .section-header{text-align:center;margin-bottom:5rem}
-.section-label{font-family:var(--font-label);font-size:0.63rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:1rem;display:block}
+.section-label{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:1rem;display:block}
 .section-title{font-family:var(--font-display);font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:400;color:var(--ink);line-height:1.2}
 .section-title.light{color:var(--cream)}
 .section-rule{width:60px;height:2px;background:linear-gradient(90deg,var(--teal-dim),var(--teal));margin:1.5rem auto 0}
@@ -173,34 +173,34 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .book-card{background:rgba(255,255,255,0.03);padding:1.75rem;position:relative;border:1px solid rgba(45,212,191,0.1);border-radius:10px;transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition)}
 .book-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3);border-color:rgba(45,212,191,0.22)}
 .book-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal-dim),var(--teal-bright));border-radius:10px 10px 0 0}
-.book-number{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem}
+.book-number{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem}
 .book-title{font-family:var(--font-display);font-size:clamp(1rem,1.8vw,1.3rem);font-weight:600;color:var(--cream);line-height:1.3;margin-bottom:0.4rem}
-.book-series{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);margin-bottom:1.75rem}
-.book-summary{font-size:0.98rem;line-height:1.78;color:var(--stone);font-weight:400;margin-bottom:2rem}
-.book-link{font-family:var(--font-label);font-size:0.63rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(45,212,191,0.3);padding-bottom:2px;transition:color var(--transition),border-color var(--transition)}
+.book-series{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);margin-bottom:1.75rem}
+.book-summary{font-size:1rem;line-height:1.78;color:var(--stone);font-weight:400;margin-bottom:2rem}
+.book-link{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(45,212,191,0.3);padding-bottom:2px;transition:color var(--transition),border-color var(--transition)}
 .book-link:hover{color:var(--teal-bright);border-color:var(--teal-bright)}
 
 .book-cover{display:block;width:100%;margin-bottom:2rem;line-height:0}
 .book-cover img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 8px 30px rgba(0,0,0,0.4),0 0 20px rgba(45,212,191,0.05)}
 .book-cover-placeholder{width:100%;aspect-ratio:0.65/1;background:linear-gradient(135deg,var(--deep) 0%,var(--mid) 100%);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.06)}
-.book-cover-placeholder span{font-family:var(--font-label);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text)}
+.book-cover-placeholder span{font-family:var(--font-label);font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text)}
 .book-card.coming-soon{opacity:0.6}
 .book-card.coming-soon::before{background:linear-gradient(90deg,#7c3aed,var(--purple-light))}
-.coming-badge{display:inline-block;font-family:var(--font-label);font-size:0.53rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--purple-light);background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.3);padding:0.3rem 0.8rem;margin-bottom:1rem;border-radius:4px}
+.coming-badge{display:inline-block;font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--purple-light);background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.3);padding:0.3rem 0.8rem;margin-bottom:1rem;border-radius:4px}
 
 /* WIKI */
 #storyworld{background:var(--void);padding:8rem 5vw;position:relative;overflow:hidden}
 #storyworld::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,0.3),transparent)}
 .storyworld-intro{text-align:center;max-width:640px;margin:0 auto 4rem}
-.storyworld-intro p{font-size:1.05rem;line-height:1.8;color:var(--stone);font-weight:400;margin-top:1.5rem;font-style:italic}
+.storyworld-intro p{font-size:1.05rem;line-height:1.8;color:var(--stone);font-weight:400;margin-top:1.5rem}
 .wiki-filters{display:flex;justify-content:center;gap:0.4rem;margin-bottom:2.5rem;flex-wrap:wrap}
-.wiki-filter{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-text);background:transparent;border:1px solid rgba(255,255,255,0.07);padding:0.5rem 1.1rem;cursor:pointer;transition:all var(--transition)}
+.wiki-filter{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-text);background:transparent;border:1px solid rgba(255,255,255,0.07);padding:0.5rem 1.1rem;cursor:pointer;transition:all var(--transition)}
 .wiki-filter:hover{color:var(--teal);border-color:rgba(45,212,191,0.25)}
 .wiki-filter.active{color:var(--void);background:var(--teal);border-color:var(--teal)}
 
-.wiki-excerpt-note{text-align:center;font-family:var(--font-body);font-size:0.88rem;font-style:italic;color:var(--muted-text);margin-top:1.25rem;margin-bottom:2rem;transition:opacity var(--transition)}
+.wiki-excerpt-note{text-align:center;font-family:var(--font-body);font-size:1rem;font-style:italic;color:var(--muted-text);margin-top:1.25rem;margin-bottom:2rem;transition:opacity var(--transition)}
 .wiki-excerpt-note.hidden{opacity:0;pointer-events:none;height:0;margin:0}
-.wiki-cat-note{text-align:center;font-family:var(--font-body);font-size:0.88rem;font-style:italic;color:var(--muted-text);margin-top:1.25rem;margin-bottom:2rem}
+.wiki-cat-note{text-align:center;font-family:var(--font-body);font-size:1rem;font-style:italic;color:var(--muted-text);margin-top:1.25rem;margin-bottom:2rem}
 .wiki-grid{max-width:900px;margin:0 auto;display:flex;flex-direction:column}
 .wiki-card{display:flex;align-items:center;gap:2rem;padding:1rem 1rem 1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:all var(--transition);position:relative}
 .wiki-card:first-child{border-top:1px solid rgba(255,255,255,0.05)}
@@ -215,7 +215,7 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .wiki-card:hover{background:rgba(255,255,255,0.025)}
 .wiki-card:hover::before{opacity:1}
 .wiki-card-meta{display:none}
-.wiki-tag{font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;display:block;flex:0 0 100px;min-width:0}
+.wiki-tag{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;display:block;flex:0 0 100px;min-width:0}
 .wiki-card[data-category="creature"] .wiki-tag{color:#86efac}
 .wiki-card[data-category="flora"] .wiki-tag{color:#c084fc}
 .wiki-card[data-category="location"] .wiki-tag{color:#d4a847}
@@ -225,9 +225,9 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .wiki-card[data-category="essence"] .wiki-tag{color:#fcd34d}
 .wiki-card-body{flex:0 0 220px;min-width:0}
 .wiki-name{font-family:var(--font-display);font-size:0.88rem;font-weight:400;color:var(--cream);line-height:1.3}
-.wiki-latin{font-family:var(--font-body);font-size:0.75rem;font-style:italic;color:var(--muted-text);margin-top:0.15rem}
-.wiki-desc{flex:1;font-size:0.88rem;line-height:1.55;color:rgba(213,205,196,0.5);font-weight:300;min-width:0}
-.wiki-more{flex:0 0 auto;font-family:var(--font-label);font-size:0.5rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted-text);white-space:nowrap;opacity:0;transition:opacity var(--transition)}
+.wiki-latin{font-family:var(--font-body);font-size:0.8rem;font-style:italic;color:var(--muted-text);margin-top:0.15rem}
+.wiki-desc{flex:1;font-size:1rem;line-height:1.55;color:rgba(213,205,196,0.85);font-weight:400;min-width:0}
+.wiki-more{flex:0 0 auto;font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted-text);white-space:nowrap;opacity:0;transition:opacity var(--transition)}
 .wiki-card:hover .wiki-more{opacity:1;color:var(--teal)}
 
 /* MODAL */
@@ -245,11 +245,11 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .modal-body-content{padding:2rem 2.5rem 2.5rem}
 .wiki-modal-close{position:absolute;top:1.25rem;right:1.25rem;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.1);color:var(--stone);font-size:0.9rem;cursor:pointer;line-height:1;transition:all var(--transition);width:28px;height:28px;display:flex;align-items:center;justify-content:center;z-index:10}
 .wiki-modal-close:hover{color:var(--cream);background:rgba(255,255,255,0.12)}
-#modal-tag{font-family:var(--font-label);font-size:0.55rem;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:0.85rem;display:block}
+#modal-tag{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:0.85rem;display:block}
 #modal-name{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.75rem);font-weight:400;color:var(--cream);margin-bottom:0.35rem;line-height:1.2}
-#modal-latin{font-family:var(--font-body);font-size:0.9rem;font-style:italic;color:var(--muted-text);display:block}
+#modal-latin{font-family:var(--font-body);font-size:1rem;font-style:italic;color:var(--muted-text);display:block}
 .modal-divider{height:1px;background:rgba(255,255,255,0.07);margin-bottom:0}
-#modal-body{font-size:1rem;line-height:1.82;color:var(--stone);font-weight:300}
+#modal-body{font-size:1rem;line-height:1.82;color:var(--stone);font-weight:400}
 #modal-body strong{color:var(--cream);font-weight:600}
 #modal-body p+p{margin-top:1rem}
 
@@ -262,7 +262,7 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .dream-type:hover{background:rgba(45,212,191,0.04)}
 .dream-type:nth-child(4n){border-right:none}
 .dream-name{font-family:var(--font-display);font-size:0.82rem;font-weight:600;color:var(--cream);margin-bottom:0.65rem}
-.dream-desc{font-size:0.86rem;line-height:1.65;color:var(--stone);font-weight:300}
+.dream-desc{font-size:1rem;line-height:1.65;color:var(--stone);font-weight:400}
 .dream-rarity{margin-top:0.75rem;display:flex;gap:3px}
 .rarity-dot{width:5px;height:5px;border-radius:50%;background:rgba(45,212,191,0.15)}
 .rarity-dot.filled{background:var(--teal)}
@@ -276,13 +276,13 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .author-photo{width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:2rem;border:2px solid var(--teal-dim)}.author-photo img{width:100%;height:100%;object-fit:cover;display:block}.author-initials{width:76px;height:76px;border:1px solid var(--teal-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
 .author-initials span{font-family:var(--font-display);font-size:1.3rem;font-weight:400;color:var(--teal)}
 .about-name{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--cream);line-height:1.2;margin-bottom:0.5rem}
-.about-role{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:2rem}
+.about-role{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:2rem}
 .about-links{display:flex;flex-direction:column;gap:0.75rem}
-.about-link{font-family:var(--font-label);font-size:0.58rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);text-decoration:none;transition:color var(--transition);display:flex;align-items:center;gap:0.75rem}
+.about-link{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);text-decoration:none;transition:color var(--transition);display:flex;align-items:center;gap:0.75rem}
 .about-link::before{content:'→';color:var(--teal-dim);font-size:0.75rem;transition:transform var(--transition),color var(--transition)}
 .about-link:hover{color:var(--cream)}
 .about-link:hover::before{transform:translateX(3px);color:var(--teal)}
-.about-body{font-size:1.08rem;line-height:1.9;color:var(--stone);font-weight:300}
+.about-body{font-size:1.08rem;line-height:1.9;color:var(--stone);font-weight:400}
 .about-body p+p{margin-top:1.5rem}
 .about-body strong{color:var(--cream);font-weight:600}
 .about-body em{color:var(--teal-bright);font-style:italic}
@@ -291,7 +291,7 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 #downloads{background:var(--deep);padding:4rem 5vw;position:relative}
 #downloads::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal-dim),transparent)}
 .downloads-header{max-width:900px;margin:0 auto 2rem}
-.downloads-toggle{display:inline-flex;align-items:center;gap:0.85rem;font-family:var(--font-label);font-size:0.62rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);background:transparent;border:1px solid rgba(45,212,191,0.35);padding:0.85rem 1.75rem;cursor:pointer;transition:all var(--transition);margin-top:1.25rem}
+.downloads-toggle{display:inline-flex;align-items:center;gap:0.85rem;font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);background:transparent;border:1px solid rgba(45,212,191,0.35);padding:0.85rem 1.75rem;cursor:pointer;transition:all var(--transition);margin-top:1.25rem}
 .downloads-toggle:hover{background:rgba(45,212,191,0.06);border-color:var(--teal)}
 .downloads-toggle .toggle-icon{display:inline-block;transition:transform 0.4s ease;font-style:normal}
 .downloads-toggle.open .toggle-icon{transform:rotate(45deg)}
@@ -305,7 +305,7 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 .dl-card:hover .dl-thumb{filter:brightness(1)}
 .dl-info{padding:0.6rem 0.75rem;background:var(--mid);border-top:1px solid rgba(255,255,255,0.06)}
 .dl-title{font-family:var(--font-display);font-size:0.68rem;font-weight:400;color:var(--cream);margin-bottom:0.2rem;display:block}
-.dl-meta{font-family:var(--font-label);font-size:0.45rem;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-text);display:block}
+.dl-meta{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-text);display:block}
 @media(max-width:700px){.dl-card{flex:0 0 calc(33% - 0.7rem)}}
 @media(max-width:420px){.dl-card{flex:0 0 calc(50% - 0.5rem)}}
 
@@ -314,27 +314,27 @@ nav.scrolled{background:rgba(8,6,15,0.97);border-bottom:1px solid rgba(45,212,19
 #contact::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal-dim),transparent)}
 .contact-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
 .contact-block h3{font-family:var(--font-display);font-size:1.6rem;font-weight:400;color:var(--cream);margin-bottom:1rem;line-height:1.2}
-.contact-block p{font-size:0.9rem;font-weight:400;line-height:1.8;color:var(--stone);margin-bottom:1.5rem}
+.contact-block p{font-size:1rem;font-weight:400;line-height:1.8;color:var(--stone);margin-bottom:1.5rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:0.85rem}
-.form-group label{font-family:var(--font-label);font-size:0.55rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-text)}
-.form-group input,.form-group select,.form-group textarea{font-family:var(--font-body);font-size:0.88rem;color:var(--cream);background:var(--mid);border:1px solid rgba(255,255,255,0.07);padding:0.75rem 1rem;outline:none;transition:border-color var(--transition);width:100%}
+.form-group label{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-text)}
+.form-group input,.form-group select,.form-group textarea{font-family:var(--font-body);font-size:1rem;color:var(--cream);background:var(--mid);border:1px solid rgba(255,255,255,0.07);padding:0.75rem 1rem;outline:none;transition:border-color var(--transition);width:100%}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal-dim)}
 .form-group select{appearance:none;cursor:pointer}
 .form-group textarea{resize:none;min-height:110px}
-.btn-submit{font-family:var(--font-label);font-size:0.62rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--void);background:var(--teal);border:none;padding:0.9rem 2.25rem;cursor:pointer;transition:background 0.2s;margin-top:0.5rem}
+.btn-submit{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--void);background:var(--teal);border:none;padding:0.9rem 2.25rem;cursor:pointer;transition:background 0.2s;margin-top:0.5rem}
 .btn-submit:hover{background:var(--teal-bright)}
-.form-success{display:none;background:rgba(45,212,191,0.08);border:1px solid var(--teal-dim);padding:0.85rem 1rem;font-size:0.85rem;color:var(--teal);margin-top:1rem}
+.form-success{display:none;background:rgba(45,212,191,0.08);border:1px solid var(--teal-dim);padding:0.85rem 1rem;font-size:1rem;color:var(--teal);margin-top:1rem}
 .nl-form{display:flex;gap:0.75rem;flex-wrap:wrap}
-.nl-input{flex:1;min-width:180px;padding:0.85rem 1.1rem;font-family:var(--font-body);font-size:0.85rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--cream);outline:none}
-.nl-btn{font-family:var(--font-label);font-size:0.62rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--void);background:var(--teal);border:none;padding:0.85rem 1.75rem;cursor:pointer;white-space:nowrap}
-.nl-note{font-size:0.72rem;color:var(--muted-text);margin-top:0.75rem}
+.nl-input{flex:1;min-width:180px;padding:0.85rem 1.1rem;font-family:var(--font-body);font-size:1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--cream);outline:none}
+.nl-btn{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--void);background:var(--teal);border:none;padding:0.85rem 1.75rem;cursor:pointer;white-space:nowrap}
+.nl-note{font-size:0.85rem;color:var(--muted-text);margin-top:0.75rem}
 
 /* BACK TO TOP */
 .back-top{position:fixed;bottom:2rem;right:2rem;width:36px;height:36px;border-radius:50%;
   border:1px solid rgba(45,212,191,0.25);background:rgba(8,6,15,0.85);
   display:flex;align-items:center;justify-content:center;
-  color:var(--teal);font-size:0.8rem;text-decoration:none;
+  color:var(--teal);font-size:1rem;text-decoration:none;
   opacity:0;pointer-events:none;transition:all var(--transition);z-index:90;
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .back-top.visible{opacity:1;pointer-events:auto}
@@ -347,7 +347,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
 .footer-social{display:flex;gap:1rem;align-items:center}
 .footer-social a{color:var(--muted-text);display:flex;align-items:center;text-decoration:none;transition:color var(--transition)}
 .footer-social a:hover{color:var(--teal)}
-.footer-meta{font-family:var(--font-label);font-size:0.53rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);text-align:right;line-height:1.8}
+.footer-meta{font-family:var(--font-label);font-size:0.66rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted-text);text-align:right;line-height:1.8}
 .footer-meta a{color:var(--muted-text);text-decoration:none;transition:color var(--transition)}
 .footer-meta a:hover{color:var(--teal)}
 
@@ -366,10 +366,10 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
   .book-summary{font-size:1.08rem}
   .contact-block p{font-size:1rem}
   .fact-value{font-size:1rem}
-  .dream-desc{font-size:0.95rem}
-  .wiki-name{font-size:0.95rem}
-  .wiki-desc{font-size:0.95rem}
-  .wiki-excerpt-note,.wiki-cat-note{font-size:0.95rem}
+  .dream-desc{font-size:1rem}
+  .wiki-name{font-size:1rem}
+  .wiki-desc{font-size:1rem}
+  .wiki-excerpt-note,.wiki-cat-note{font-size:1rem}
   .world-intro-grid{max-width:1200px}
   .books-grid{max-width:1200px}
   #storyworld .storyworld-intro{max-width:700px}
@@ -389,7 +389,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
   .nav-links a{font-size:0.75rem}
   .nav-links a::after{display:none}
 }
-@media(max-width:600px){.wiki-card{flex-wrap:wrap;gap:0.5rem;padding:0.9rem 1rem 0.9rem 1.1rem}.wiki-tag{flex:0 0 100%;font-size:0.45rem}.wiki-card-body{flex:1;min-width:0}.wiki-desc{display:none}.wiki-more{display:none}.dreams-grid{grid-template-columns:1fr 1fr}.world-facts{grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:1.5rem;text-align:center}.footer-meta{text-align:center}.dream-type:nth-child(2n){border-right:none}.books-grid{grid-template-columns:1fr}.contact-grid{gap:2rem}}
+@media(max-width:600px){.wiki-card{flex-wrap:wrap;gap:0.5rem;padding:0.9rem 1rem 0.9rem 1.1rem}.wiki-tag{flex:0 0 100%;font-size:0.62rem}.wiki-card-body{flex:1;min-width:0}.wiki-desc{display:none}.wiki-more{display:none}.dreams-grid{grid-template-columns:1fr}.hero-eyebrow::before,.hero-eyebrow::after{display:none}.world-facts{grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:1.5rem;text-align:center}.footer-meta{text-align:center}.dream-type:nth-child(2n){border-right:none}.books-grid{grid-template-columns:1fr}.contact-grid{gap:2rem}}
 </style>
 
 <!-- Einwilligung + Meta Pixel (lädt erst nach Zustimmung), UTM -->
@@ -443,7 +443,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
       <line x1="245" y1="10" x2="400" y2="10" stroke="#2dd4bf" stroke-width="0.5"/>
     </svg>
   </div>
-  <div style="position:absolute;bottom:3rem;right:4vw;opacity:0.12;pointer-events:none;z-index:1"><img src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/ui/elements/hf1-gears-ornament.png" alt="" style="width:180px;height:auto" loading="lazy"></div>
+  <div style="position:absolute;bottom:3rem;right:4vw;opacity:0.12;pointer-events:none;z-index:1"><img src="/images/ui/elements/hf1-gears-ornament.png" alt="" style="width:180px;height:auto" loading="lazy"></div>
   <div class="scroll-hint">Scroll</div>
 </section>
 
@@ -493,7 +493,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
   </div>
   <div class="books-grid">
     <div class="book-card reveal">
-      <div class="book-cover"><img src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/books/hf1/hf1-ebook-cover.jpg" alt="Helena Flinn and the Secrets of the Night — cover" loading="lazy"></div>
+      <div class="book-cover"><img src="/images/books/hf1/hf1-ebook-cover.jpg" alt="Helena Flinn and the Secrets of the Night — cover" loading="lazy"></div>
       <p class="book-number">Book One</p>
       <h3 class="book-title">Helena Flinn and the Secrets of the Night</h3>
       <p class="book-series">The Helena Flinn Chronicles</p>
@@ -503,7 +503,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
       <a href="https://mybook.to/helena-flinn-SotN" target="_blank" class="book-link">Get your copy →</a>
     </div>
     <div class="book-card reveal reveal-delay-1">
-      <div class="book-cover"><img src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/books/hf2/hf2-ebook-cover.jpg" alt="Helena Flinn and the Flickering Realms — cover" loading="lazy"></div>
+      <div class="book-cover"><img src="/images/books/hf2/hf2-ebook-cover.jpg" alt="Helena Flinn and the Flickering Realms — cover" loading="lazy"></div>
       <p class="book-number">Book Two</p>
       <h3 class="book-title">Helena Flinn and the Flickering Realms</h3>
       <p class="book-series">The Helena Flinn Chronicles</p>
@@ -553,40 +553,40 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
   <div class="downloads-panel" id="downloads-panel">
     <div class="downloads-grid">
 
-      <div class="dl-card" onclick="dlFile('https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf1-wallpaper-mobile.jpg','hf1-wallpaper-mobile.jpg')">
-        <div class="dl-thumb-wrap"><img class="dl-thumb" src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf1-wallpaper-mobile-thumb.jpg" alt="Helena Flinn — Secrets of the Night, mobile wallpaper" loading="lazy"></div>
+      <div class="dl-card" onclick="dlFile('/downloads/wallpapers/hf1-wallpaper-mobile.jpg','hf1-wallpaper-mobile.jpg')">
+        <div class="dl-thumb-wrap"><img class="dl-thumb" src="/downloads/wallpapers/hf1-wallpaper-mobile-thumb.jpg" alt="Helena Flinn — Secrets of the Night, mobile wallpaper" loading="lazy"></div>
         <div class="dl-info">
           <div class="dl-title">Secrets of the Night</div>
           <div class="dl-meta">Mobile Wallpaper · 1350×2400</div>
         </div>
       </div>
 
-      <div class="dl-card" onclick="dlFile('https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf2-wallpaper-mobile-v1.jpg','hf2-wallpaper-mobile-v1.jpg')">
-        <div class="dl-thumb-wrap"><img class="dl-thumb" src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf2-wallpaper-mobile-v1-thumb.jpg" alt="Helena Flinn — Flickering Realms, mobile wallpaper v1" loading="lazy"></div>
+      <div class="dl-card" onclick="dlFile('/downloads/wallpapers/hf2-wallpaper-mobile-v1.jpg','hf2-wallpaper-mobile-v1.jpg')">
+        <div class="dl-thumb-wrap"><img class="dl-thumb" src="/downloads/wallpapers/hf2-wallpaper-mobile-v1-thumb.jpg" alt="Helena Flinn — Flickering Realms, mobile wallpaper v1" loading="lazy"></div>
         <div class="dl-info">
           <div class="dl-title">The Flickering Realms</div>
           <div class="dl-meta">Mobile Wallpaper · 1350×2400 · Variant I</div>
         </div>
       </div>
 
-      <div class="dl-card" onclick="dlFile('https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf2-wallpaper-mobile-v2.jpg','hf2-wallpaper-mobile-v2.jpg')">
-        <div class="dl-thumb-wrap"><img class="dl-thumb" src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf2-wallpaper-mobile-v2-thumb.jpg" alt="Helena Flinn — Flickering Realms, mobile wallpaper v2" loading="lazy"></div>
+      <div class="dl-card" onclick="dlFile('/downloads/wallpapers/hf2-wallpaper-mobile-v2.jpg','hf2-wallpaper-mobile-v2.jpg')">
+        <div class="dl-thumb-wrap"><img class="dl-thumb" src="/downloads/wallpapers/hf2-wallpaper-mobile-v2-thumb.jpg" alt="Helena Flinn — Flickering Realms, mobile wallpaper v2" loading="lazy"></div>
         <div class="dl-info">
           <div class="dl-title">The Flickering Realms</div>
           <div class="dl-meta">Mobile Wallpaper · 1350×2400 · Variant II</div>
         </div>
       </div>
 
-      <div class="dl-card" onclick="dlFile('https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf2-wallpaper-desktop-v1.jpg','hf2-wallpaper-desktop-v1.jpg')">
-        <div class="dl-thumb-wrap"><img class="dl-thumb" src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf2-wallpaper-desktop-v1-thumb.jpg" alt="Helena Flinn — Flickering Realms, desktop wallpaper v1" loading="lazy"></div>
+      <div class="dl-card" onclick="dlFile('/downloads/wallpapers/hf2-wallpaper-desktop-v1.jpg','hf2-wallpaper-desktop-v1.jpg')">
+        <div class="dl-thumb-wrap"><img class="dl-thumb" src="/downloads/wallpapers/hf2-wallpaper-desktop-v1-thumb.jpg" alt="Helena Flinn — Flickering Realms, desktop wallpaper v1" loading="lazy"></div>
         <div class="dl-info">
           <div class="dl-title">The Flickering Realms</div>
           <div class="dl-meta">Desktop Wallpaper · 3840×2160 · Variant I</div>
         </div>
       </div>
 
-      <div class="dl-card" onclick="dlFile('https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf2-wallpaper-desktop-v2.jpg','hf2-wallpaper-desktop-v2.jpg')">
-        <div class="dl-thumb-wrap"><img class="dl-thumb" src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/downloads/wallpapers/hf2-wallpaper-desktop-v2-thumb.jpg" alt="Helena Flinn — Flickering Realms, desktop wallpaper v2" loading="lazy"></div>
+      <div class="dl-card" onclick="dlFile('/downloads/wallpapers/hf2-wallpaper-desktop-v2.jpg','hf2-wallpaper-desktop-v2.jpg')">
+        <div class="dl-thumb-wrap"><img class="dl-thumb" src="/downloads/wallpapers/hf2-wallpaper-desktop-v2-thumb.jpg" alt="Helena Flinn — Flickering Realms, desktop wallpaper v2" loading="lazy"></div>
         <div class="dl-info">
           <div class="dl-title">The Flickering Realms</div>
           <div class="dl-meta">Desktop Wallpaper · 3840×2160 · Variant II</div>
@@ -594,7 +594,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
       </div>
 
     </div>
-    <p style="font-family:var(--font-label);font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-text);max-width:900px;margin:2rem auto 0">Free to use for personal, non-commercial purposes. All artwork © Little Lights Studio GmbH.</p>
+    <p style="font-family:var(--font-label);font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-text);max-width:900px;margin:2rem auto 0">Free to use for personal, non-commercial purposes. All artwork © Little Lights Studio GmbH.</p>
   </div>
 </section>
 
@@ -1217,35 +1217,35 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
     <span class="section-label" style="color:var(--teal)">Incoming Transmissions</span>
     <h2 class="section-title light">The World Is Getting Bigger</h2>
     <div class="section-rule"></div>
-    <p style="font-size:0.95rem;color:var(--text-light);margin-top:1.25rem;font-style:italic;font-family:var(--font-body)">The Bureau is preparing new materials for public access. Newsletter subscribers will be the first to know.</p>
+    <p style="font-size:1rem;color:var(--text-light);margin-top:1.25rem;font-style:italic;font-family:var(--font-body)">The Bureau is preparing new materials for public access. Newsletter subscribers will be the first to know.</p>
   </div>
   <div style="max-width:700px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1.5rem">
     <div class="reveal" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.12);border-radius:8px;background:rgba(45,212,191,0.03)">
       <span style="font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:0.1rem">📋</span>
       <div>
         <p style="font-family:var(--font-display);font-size:1rem;color:var(--cream);margin:0 0 0.3rem">Young Explorers Programme</p>
-        <p style="font-size:0.82rem;color:var(--stone);margin:0;line-height:1.6">Reading guides, STEM connections, and classroom activities. Bureau-approved materials for teachers and librarians.</p>
+        <p style="font-size:1rem;color:var(--stone);margin:0;line-height:1.6">Reading guides, STEM connections, and classroom activities. Bureau-approved materials for teachers and librarians.</p>
       </div>
     </div>
     <div class="reveal reveal-delay-1" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.08);border-radius:8px">
       <span style="font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:0.1rem">🔬</span>
       <div>
         <p style="font-family:var(--font-display);font-size:1rem;color:var(--cream);margin:0 0 0.3rem">The Nocturne Codex — Full Archive</p>
-        <p style="font-size:0.82rem;color:var(--stone);margin:0;line-height:1.6">A standalone searchable archive with Bureau terminal interface. 51 entries. Seven categories. Some files remain classified.</p>
+        <p style="font-size:1rem;color:var(--stone);margin:0;line-height:1.6">A standalone searchable archive with Bureau terminal interface. 51 entries. Seven categories. Some files remain classified.</p>
       </div>
     </div>
     <div class="reveal reveal-delay-2" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(45,212,191,0.08);border-radius:8px">
       <span style="font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:0.1rem">🌙</span>
       <div>
         <p style="font-family:var(--font-display);font-size:1rem;color:var(--cream);margin:0 0 0.3rem">Dream Design Workshop</p>
-        <p style="font-size:0.82rem;color:var(--stone);margin:0;line-height:1.6">Pick your essences. Choose your dream elements. Receive a Bureau-issued Dream Design Brief. The workshop has never been open to the public. Until now.</p>
+        <p style="font-size:1rem;color:var(--stone);margin:0;line-height:1.6">Pick your essences. Choose your dream elements. Receive a Bureau-issued Dream Design Brief. The workshop has never been open to the public. Until now.</p>
       </div>
     </div>
     <div class="reveal reveal-delay-3" style="display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.5rem;border:1px solid rgba(200,100,90,0.15);border-radius:8px;background:rgba(200,100,90,0.03)">
       <span style="font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:0.1rem">📖</span>
       <div>
         <p style="font-family:var(--font-display);font-size:1rem;color:var(--cream);margin:0 0 0.3rem">Book 3 — The Trilogy Concludes</p>
-        <p style="font-size:0.82rem;color:var(--stone);margin:0;line-height:1.6">The final chapter of the Helena Flinn Chronicles. December 2026.</p>
+        <p style="font-size:1rem;color:var(--stone);margin:0;line-height:1.6">The final chapter of the Helena Flinn Chronicles. December 2026.</p>
       </div>
     </div>
   </div>
@@ -1336,7 +1336,7 @@ footer{background:var(--void);border-top:1px solid rgba(255,255,255,0.05);paddin
 <section id="about">
   <div class="about-inner">
     <div class="about-sidebar reveal">
-      <div class="author-photo"><img src="https://raw.githubusercontent.com/littlelightsstudio/helenaflinn/main/images/author/michael-sokolar-headshot-square.jpg" alt="Michael Sokolar" loading="lazy"></div>
+      <div class="author-photo"><img src="/images/author/michael-sokolar-headshot-square.jpg" alt="Michael Sokolar" loading="lazy"></div>
       <h2 class="about-name">Michael Sokolar</h2>
       <p class="about-role">Author — Vienna, Austria</p>
       <div class="about-links">

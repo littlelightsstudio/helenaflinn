@@ -90,7 +90,7 @@
       '#hf-consent{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:rgba(8,6,15,0.97);' +
       'border-top:1px solid rgba(45,212,191,0.18);backdrop-filter:blur(8px);padding:1rem 1rem calc(1rem + env(safe-area-inset-bottom))}' +
       '#hf-consent .in{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}' +
-      '#hf-consent p{flex:1 1 420px;margin:0;font-family:"Crimson Pro",Georgia,serif;font-size:0.98rem;line-height:1.5;color:#d4cfc4}' +
+      '#hf-consent p{flex:1 1 420px;margin:0;font-family:"Literata",Georgia,serif;font-size:0.98rem;line-height:1.5;color:#d4cfc4}' +
       '#hf-consent a{color:#2dd4bf;text-decoration:none;border-bottom:1px solid rgba(45,212,191,0.3)}' +
       '#hf-consent .btns{display:flex;gap:0.6rem;flex:0 0 auto}' +
       '#hf-consent button{font-family:"Josefin Sans",sans-serif;font-size:0.62rem;font-weight:400;letter-spacing:0.15em;' +
