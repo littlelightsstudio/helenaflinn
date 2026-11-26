@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /impressum.html
-Disallow: /privacy.html
 Disallow: /test/
 
 Sitemap: https://helenaflinn.com/sitemap.xml
